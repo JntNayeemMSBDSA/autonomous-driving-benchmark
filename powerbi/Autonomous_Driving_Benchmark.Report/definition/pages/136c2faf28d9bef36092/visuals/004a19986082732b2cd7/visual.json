@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "004a19986082732b2cd7",
+  "position": {
+    "x": 24,
+    "y": 166,
+    "z": 0,
+    "height": 286,
+    "width": 500,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_safety_indicator"
+                    }
+                  },
+                  "Property": "indicator_name"
+                }
+              },
+              "queryRef": "fact_safety_indicator.indicator_name",
+              "nativeQueryRef": "indicator_name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Safety Indicator Value"
+                }
+              },
+              "queryRef": "dim_company.Safety Indicator Value",
+              "nativeQueryRef": "Safety Indicator Value"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Waymo Matched Safety Benchmark Indicators'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,11 @@
+company_name,metric_date,metric_name,metric_value,unit,limitation
+California program total,2023-11-30,California AV test miles total,9068861.0,mile/year,All permit holders combined; reporting scope differs over time
+California program total,2024-11-30,California AV test miles with safety driver,3945171.0,mile/year,All permit holders combined; not company-specific
+California program total,2024-11-30,California fully autonomous test miles,552895.0,mile/year,All permit holders combined; not company-specific
+Mobileye,2024-12-28,Cumulative vehicles with Mobileye technology,200000000.0,vehicle,More than 200 million; mixed generations
+Mobileye,2024-12-28,EyeQ and SuperVision systems shipped,29000000.0,system/year,Mixed product tiers and automation levels
+Tesla,2024-12-31,Consumer vehicle deliveries,1789226.0,vehicle/year,Vehicle deliveries are not autonomous driving exposure
+Waymo,2025-03-25,Fully autonomous miles,50000000.0,mile,Rounded lower-bound claim; superseded by 56.7m dataset for safety analysis
+Waymo,2025-05-05,Operating vehicles,1500.0,vehicle,"More than 1,500; stored as lower bound"
+Waymo,2025-05-05,Paid trips per week,250000.0,trip/week,Company-defined paid trips
+Waymo,2025-01-31,Rider-only autonomous miles,56700000.0,mile,Matched safety analysis exposure through January 2025

@@ -1,0 +1,46 @@
+table dim_technology
+
+	column technology_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: technology_id
+
+	column technology_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: technology_name
+
+	column technology_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: technology_category
+
+	column description
+		dataType: string
+		summarizeBy: none
+		sourceColumn: description
+
+	column input_or_unit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: input_or_unit
+
+	column comparability_warning
+		dataType: string
+		summarizeBy: none
+		sourceColumn: comparability_warning
+
+	partition dim_technology = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="DimTechnology",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"technology_id", Int64.Type}, {"technology_name", type text}, {"technology_category", type text}, {"description", type text}, {"input_or_unit", type text}, {"comparability_warning", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

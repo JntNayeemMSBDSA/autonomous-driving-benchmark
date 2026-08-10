@@ -1,0 +1,39 @@
+# Local browser captures and unrelated personal workspace files
+Upwork.html
+Upwork_files/
+New folder/
+
+# Temporary render and QA working files
+tmp/
+powerbi/card_format_check*.png
+powerbi/cost_native_check.png
+powerbi/deliver_*.png
+powerbi/executive_clean.png
+powerbi/export_*.png
+powerbi/file_menu.png
+powerbi/final_*.png
+powerbi/open_*.png
+powerbi/pbi_*.png
+powerbi/pdf_export_progress.png
+powerbi/polish_*.png
+powerbi/pre_refresh_fixed.png
+powerbi/qa_*.png
+powerbi/saveas_*.png
+powerbi/window_*.png
+
+# Internal build handoff package; final source artifacts are under powerbi/
+Autonomous_Driving_PowerBI_Codex_Handoff/
+Autonomous_Driving_PowerBI_Codex_Handoff.zip
+
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

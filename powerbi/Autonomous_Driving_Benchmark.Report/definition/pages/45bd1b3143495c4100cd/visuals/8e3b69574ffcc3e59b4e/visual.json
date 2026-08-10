@@ -1,0 +1,109 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "8e3b69574ffcc3e59b4e",
+  "position": {
+    "x": 460,
+    "y": 488,
+    "z": 0,
+    "height": 200,
+    "width": 796,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "dim_company.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_company_capability"
+                    }
+                  },
+                  "Property": "capability_category"
+                }
+              },
+              "queryRef": "fact_company_capability.capability_category",
+              "nativeQueryRef": "capability_category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_company_capability"
+                    }
+                  },
+                  "Property": "evidence_status"
+                }
+              },
+              "queryRef": "fact_company_capability.evidence_status",
+              "nativeQueryRef": "evidence_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_company_capability"
+                    }
+                  },
+                  "Property": "source_id"
+                }
+              },
+              "queryRef": "fact_company_capability.source_id",
+              "nativeQueryRef": "source_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_company_capability"
+                    }
+                  },
+                  "Property": "limitation"
+                }
+              },
+              "queryRef": "fact_company_capability.limitation",
+              "nativeQueryRef": "limitation"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence and Limitations'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

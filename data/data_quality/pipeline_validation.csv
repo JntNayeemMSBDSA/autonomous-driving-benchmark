@@ -1,0 +1,8 @@
+check_name,status,expected,actual,details
+Historical cutoff,PASS,All source dates at or before cutoff,2025-06-30,Prevents post-cutoff evidence leakage
+Unique source IDs,PASS,Unique,35,Source traceability key
+Four canonical companies,PASS,Four canonical names,"['Mobileye', 'NVIDIA', 'Tesla', 'Waymo']",Company-name standardization
+Positive GPU prices,PASS,All > 0,3.67,Range check
+Cost reconciliation,PASS,Max difference < 0.01,4.656612873077393e-10,Total equals cost components
+Score range,PASS,1 to 5,2 to 5,Ordinal constraint
+SQLite foreign keys,PASS,No violations,0,Executed database integrity

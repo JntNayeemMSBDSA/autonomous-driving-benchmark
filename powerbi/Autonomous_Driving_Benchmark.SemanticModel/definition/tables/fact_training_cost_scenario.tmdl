@@ -1,0 +1,147 @@
+table fact_training_cost_scenario
+
+	column cost_scenario_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: cost_scenario_id
+
+	column scenario_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: scenario_id
+
+	column scenario_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: scenario_name
+
+	column gpu_price_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: gpu_price_id
+
+	column cloud_provider
+		dataType: string
+		summarizeBy: none
+		sourceColumn: cloud_provider
+
+	column instance_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: instance_type
+
+	column gpu_model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: gpu_model
+
+	column required_gpus
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: required_gpus
+
+	column instances_required
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: instances_required
+
+	column provisioned_gpus
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: provisioned_gpus
+
+	column training_hours_per_run
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: training_hours_per_run
+
+	column number_of_runs
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: number_of_runs
+
+	column utilization_rate
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: utilization_rate
+
+	column discount_model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: discount_model
+
+	column price_factor
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: price_factor
+
+	column training_compute_cost_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: training_compute_cost_usd
+
+	column simulation_compute_cost_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: simulation_compute_cost_usd
+
+	column base_storage_cost_usd
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: base_storage_cost_usd
+
+	column checkpoint_storage_cost_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: checkpoint_storage_cost_usd
+
+	column egress_cost_usd
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: egress_cost_usd
+
+	column total_cost_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: total_cost_usd
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column interpretation_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: interpretation_note
+
+	partition fact_training_cost_scenario = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="FactCostScenario",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"cost_scenario_id", Int64.Type}, {"scenario_id", Int64.Type}, {"scenario_name", type text}, {"gpu_price_id", Int64.Type}, {"cloud_provider", type text}, {"instance_type", type text}, {"gpu_model", type text}, {"required_gpus", Int64.Type}, {"instances_required", Int64.Type}, {"provisioned_gpus", Int64.Type}, {"training_hours_per_run", Int64.Type}, {"number_of_runs", Int64.Type}, {"utilization_rate", type number}, {"discount_model", type text}, {"price_factor", type number}, {"training_compute_cost_usd", type number}, {"simulation_compute_cost_usd", type number}, {"base_storage_cost_usd", Int64.Type}, {"checkpoint_storage_cost_usd", type number}, {"egress_cost_usd", Int64.Type}, {"total_cost_usd", type number}, {"source_id", type text}, {"interpretation_note", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

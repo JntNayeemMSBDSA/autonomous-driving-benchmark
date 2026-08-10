@@ -1,0 +1,183 @@
+Power BI DAX Measures
+
+Historical Cutoff =
+DATE(2025, 6, 30)
+
+Source Count =
+DISTINCTCOUNT(dim_source[source_id])
+
+Primary Source Count =
+CALCULATE(
+    DISTINCTCOUNT(dim_source[source_id]),
+    dim_source[is_primary] = 1
+)
+
+Cutoff Violations =
+CALCULATE(
+    COUNTROWS(dim_source),
+    dim_source[cutoff_valid] = 0
+)
+
+Deployment Metric Value =
+SUM(fact_deployment_mileage[metric_value])
+
+Latest Metric Date =
+MAX(fact_deployment_mileage[metric_date])
+
+Waymo Rider Only Miles =
+CALCULATE(
+    SUM(fact_deployment_mileage[metric_value]),
+    dim_company[company_name] = "Waymo",
+    fact_deployment_mileage[metric_name] = "Rider-only autonomous miles"
+)
+
+Waymo Paid Trips Per Week =
+CALCULATE(
+    MAX(fact_deployment_mileage[metric_value]),
+    dim_company[company_name] = "Waymo",
+    fact_deployment_mileage[metric_name] = "Paid trips per week"
+)
+
+Incident Reports =
+DISTINCTCOUNT(fact_av_incident[report_id])
+
+No Injury Report Share =
+DIVIDE(
+    CALCULATE(
+        [Incident Reports],
+        fact_av_incident[severity_category] = "No injury reported"
+    ),
+    [Incident Reports]
+)
+
+Incident Comparison Warning =
+"Raw incident totals are not safety rates. Filter by reporting class, exposure, geography, system, and period."
+
+Total Scenario Cost =
+SUM(fact_training_cost_scenario[total_cost_usd])
+
+Training Compute Cost =
+SUM(fact_training_cost_scenario[training_compute_cost_usd])
+
+Simulation Compute Cost =
+SUM(fact_training_cost_scenario[simulation_compute_cost_usd])
+
+Storage Cost =
+SUM(fact_training_cost_scenario[base_storage_cost_usd])
++ SUM(fact_training_cost_scenario[checkpoint_storage_cost_usd])
+
+Egress Cost =
+SUM(fact_training_cost_scenario[egress_cost_usd])
+
+Compute Cost Share =
+DIVIDE(
+    [Training Compute Cost] + [Simulation Compute Cost],
+    [Total Scenario Cost]
+)
+
+Lowest Scenario Cost =
+MINX(
+    VALUES(fact_training_cost_scenario[instance_type]),
+    [Total Scenario Cost]
+)
+
+Cost Difference From On Demand =
+VAR OnDemand =
+    CALCULATE(
+        [Total Scenario Cost],
+        REMOVEFILTERS(fact_training_cost_scenario[discount_model]),
+        fact_training_cost_scenario[discount_model] = "On-demand"
+    )
+RETURN
+    [Total Scenario Cost] - OnDemand
+
+Cost Savings Percent =
+VAR OnDemand =
+    CALCULATE(
+        [Total Scenario Cost],
+        REMOVEFILTERS(fact_training_cost_scenario[discount_model]),
+        fact_training_cost_scenario[discount_model] = "On-demand"
+    )
+RETURN
+    DIVIDE(OnDemand - [Total Scenario Cost], OnDemand)
+
+Average Evidence Strength =
+AVERAGE(fact_company_capability[evidence_strength_1_5])
+
+Verified Capability Count =
+CALCULATE(
+    COUNTROWS(fact_company_capability),
+    fact_company_capability[evidence_status] = "Verified"
+)
+
+Baseline Weighted Score =
+VAR WeightedPoints =
+    SUMX(
+        fact_scalability_score,
+        fact_scalability_score[score_1_5]
+        * RELATED(scalability_criteria[baseline_weight])
+    )
+VAR TotalWeight =
+    SUMX(
+        fact_scalability_score,
+        RELATED(scalability_criteria[baseline_weight])
+    )
+RETURN
+    DIVIDE(WeightedPoints, TotalWeight)
+
+L4 Operator Weighted Score =
+VAR WeightedPoints =
+    SUMX(
+        fact_scalability_score,
+        fact_scalability_score[score_1_5]
+        * RELATED(scalability_criteria[l4_operator_weight])
+    )
+VAR TotalWeight =
+    SUMX(
+        fact_scalability_score,
+        RELATED(scalability_criteria[l4_operator_weight])
+    )
+RETURN
+    DIVIDE(WeightedPoints, TotalWeight)
+
+Platform Supplier Weighted Score =
+VAR WeightedPoints =
+    SUMX(
+        fact_scalability_score,
+        fact_scalability_score[score_1_5]
+        * RELATED(scalability_criteria[platform_supplier_weight])
+    )
+VAR TotalWeight =
+    SUMX(
+        fact_scalability_score,
+        RELATED(scalability_criteria[platform_supplier_weight])
+    )
+RETURN
+    DIVIDE(WeightedPoints, TotalWeight)
+
+QA Checks =
+COUNTROWS(qa_validation_result)
+
+QA Passed =
+CALCULATE(
+    COUNTROWS(qa_validation_result),
+    qa_validation_result[status] = "PASS"
+)
+
+QA Pass Rate =
+DIVIDE([QA Passed], [QA Checks])
+
+Selected Role =
+SELECTEDVALUE(
+    dim_company[ecosystem_role],
+    "Multiple roles selected"
+)
+
+Comparability Banner =
+VAR Roles = DISTINCTCOUNT(dim_company[ecosystem_role])
+RETURN
+IF(
+    Roles > 1,
+    "Role warning: operator, consumer ADAS, platform, and supplier metrics are not interchangeable.",
+    "Interpret metrics within the selected ecosystem role."
+)

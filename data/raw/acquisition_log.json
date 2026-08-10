@@ -1,0 +1,20 @@
+[
+  {
+    "status": "not_bundled",
+    "url": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/Archive-2021-2025/SGO-2021-01_Incident_Reports_ADS.csv",
+    "path": "data/raw/nhtsa_sgo_ads_archive_through_2025-06-15.csv",
+    "reason": "Large official archive is intentionally acquired at runtime."
+  },
+  {
+    "status": "not_bundled",
+    "url": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/Archive-2021-2025/SGO-2021-01_Incident_Reports_ADAS.csv",
+    "path": "data/raw/nhtsa_sgo_adas_archive_through_2025-06-15.csv",
+    "reason": "Large official archive is intentionally acquired at runtime."
+  },
+  {
+    "status": "not_bundled",
+    "url": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/Archive-2021-2025/SGO-2021-01_Incident_Reports_OTHER.csv",
+    "path": "data/raw/nhtsa_sgo_other_archive_through_2025-06-15.csv",
+    "reason": "Large official archive is intentionally acquired at runtime."
+  }
+]

@@ -1,0 +1,81 @@
+relationship rel_company_incident
+	fromColumn: fact_av_incident.company_id
+	toColumn: dim_company.company_id
+
+relationship rel_company_deployment
+	fromColumn: fact_deployment_mileage.company_id
+	toColumn: dim_company.company_id
+
+relationship rel_company_capability
+	fromColumn: fact_company_capability.company_id
+	toColumn: dim_company.company_id
+
+relationship rel_company_partnership
+	fromColumn: fact_partnership.company_id
+	toColumn: dim_company.company_id
+
+relationship rel_company_scalability
+	fromColumn: fact_scalability_score.company_id
+	toColumn: dim_company.company_id
+
+relationship rel_company_safety
+	fromColumn: fact_safety_indicator.company_id
+	toColumn: dim_company.company_id
+
+relationship rel_company_technology
+	fromColumn: bridge_company_technology.company_id
+	toColumn: dim_company.company_id
+
+relationship rel_technology_bridge
+	fromColumn: bridge_company_technology.technology_id
+	toColumn: dim_technology.technology_id
+
+relationship rel_criterion_scalability
+	fromColumn: fact_scalability_score.criterion_id
+	toColumn: scalability_criteria.criterion_id
+
+relationship rel_date_deployment
+	fromColumn: fact_deployment_mileage.metric_date
+	toColumn: dim_date.full_date
+
+relationship rel_date_safety
+	fromColumn: fact_safety_indicator.as_of_date
+	toColumn: dim_date.full_date
+
+relationship rel_date_incident_month
+	isActive: false
+	fromColumn: fact_av_incident.incident_month
+	toColumn: dim_date.full_date
+
+relationship rel_source_incident
+	fromColumn: fact_av_incident.source_id
+	toColumn: dim_source.source_id
+
+relationship rel_source_deployment
+	fromColumn: fact_deployment_mileage.source_id
+	toColumn: dim_source.source_id
+
+relationship rel_source_capability
+	fromColumn: fact_company_capability.source_id
+	toColumn: dim_source.source_id
+
+relationship rel_source_partnership
+	fromColumn: fact_partnership.source_id
+	toColumn: dim_source.source_id
+
+relationship rel_source_gpuprice
+	fromColumn: fact_gpu_pricing.source_id
+	toColumn: dim_source.source_id
+
+relationship rel_source_costscenario
+	fromColumn: fact_training_cost_scenario.source_id
+	toColumn: dim_source.source_id
+
+relationship rel_source_scalability
+	fromColumn: fact_scalability_score.source_id
+	toColumn: dim_source.source_id
+
+relationship rel_source_safety
+	fromColumn: fact_safety_indicator.source_id
+	toColumn: dim_source.source_id
+

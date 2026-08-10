@@ -1,0 +1,21 @@
+capability_id,company_id,capability_category,evidence_summary,evidence_status,source_id,evidence_strength_1_5,limitation
+1,1,Sensor approach,Primarily camera-based vision for consumer vehicles,Verified,SRC015,4,Low sensor complexity supports manufacturing scale; capability depends heavily on vision software
+2,1,Data collection,Large customer fleet can return selected real-world data and edge cases,Verified,SRC015,5,"Exact volume, sampling rules, and representativeness are undisclosed"
+3,1,Training infrastructure,Cortex and internal AI infrastructure disclosed at a high level,Verified,SRC015,4,Cluster size and utilization are not publicly auditable
+4,1,Simulation,Simulation and synthetic-data capabilities are described less completely than Waymo/NVIDIA,Inference,SRC016,3,Public evidence is incomplete
+5,1,Deployment,"Broad consumer distribution, but supervised Level 2 rather than rider-only Level 4",Verified,SRC015,4,Vehicle deliveries are not autonomous miles
+6,2,Sensor approach,"Redundant camera, lidar, radar, and audio suite",Verified,SRC012,5,Higher hardware and service complexity
+7,2,Data collection,Rider-only operations and test fleets generate ODD-specific driving data,Verified,SRC009,4,Geofenced exposure is narrower than a national consumer fleet
+8,2,Training infrastructure,Custom ML infrastructure supports continuous model development,Moderately supported,SRC013,5,Internal scale is not disclosed in comparable units
+9,2,Simulation,Strong public evidence of large-scale simulation and scenario testing,Verified,SRC013,5,Simulation-to-road validity cannot be independently replicated
+10,2,Deployment,"Commercial rider-only service with more than 1,500 vehicles and 250,000 paid trips/week by May 2025",Verified,SRC010,5,Point-in-time company-reported metrics
+11,3,Sensor approach,Provides configurable DRIVE Hyperion reference sensor architecture,Verified,SRC019,4,Final sensor configuration is set by customer programs
+12,3,Data collection,"Depends on customers, partners, and datasets rather than operating one comparable public mobility fleet",Verified,SRC018,3,No unified exposure metric
+13,3,Training infrastructure,End-to-end accelerated computing from data center to vehicle,Verified,SRC018,5,Customer workload efficiency varies
+14,3,Simulation,Omniverse/DRIVE Sim and simulation-first validation are core platform elements,Verified,SRC020,5,Simulation outputs are customer-specific
+15,3,Deployment,Broad OEM/developer ecosystem; deployment is indirect,Verified,SRC020,4,Partner announcements and production volumes are not equivalent
+16,4,Sensor approach,Camera-first architecture with radar/lidar redundancy for higher tiers,Verified,SRC023,4,Product tiers differ substantially
+17,4,Data collection,REM crowdsourced mapping and very broad installed base,Verified,SRC023,5,Installed vehicles span different features and generations
+18,4,Training infrastructure,Purpose-built EyeQ architecture and centralized data/software development,Verified,SRC023,4,Public information does not disclose training cluster scale
+19,4,Simulation,"Simulation and validation are part of development, but less quantitatively disclosed than NVIDIA/Waymo",Moderately supported,SRC023,4,Limited comparable public metrics
+20,4,Deployment,29.0 million EyeQ/SuperVision systems shipped in 2024; more than 200 million vehicles cumulative,Verified,SRC023,5,"Shipments are mostly ADAS components, not Level 4 vehicles"

@@ -1,0 +1,4 @@
+scenario_id,scenario_name,required_gpus,training_hours_per_run,number_of_runs,storage_tb,storage_months,checkpoint_tb,egress_tb,simulation_gpu_hours,utilization_rate,description
+1,Small experimentation,1,24,5,1,1,0.25,0.5,100,0.7,Rapid prototyping and model iteration
+2,Medium development,8,168,10,20,3,5.0,5.0,10000,0.8,Team-scale development and validation
+3,Large AV training,64,720,12,200,6,50.0,50.0,100000,0.85,Standardized large training and simulation workload

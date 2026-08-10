@@ -1,0 +1,62 @@
+table qa_validation_result
+
+	column validation_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: validation_id
+
+	column check_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: check_name
+
+	column table_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: table_name
+
+	column severity
+		dataType: string
+		summarizeBy: none
+		sourceColumn: severity
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+
+	column expected
+		dataType: string
+		summarizeBy: none
+		sourceColumn: expected
+
+	column actual
+		dataType: string
+		summarizeBy: none
+		sourceColumn: actual
+
+	column details
+		dataType: string
+		summarizeBy: none
+		sourceColumn: details
+
+	column run_date
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: run_date
+
+	partition qa_validation_result = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="QaResults",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"validation_id", Int64.Type}, {"check_name", type text}, {"table_name", type text}, {"severity", type text}, {"status", type text}, {"expected", type text}, {"actual", type text}, {"details", type text}, {"run_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

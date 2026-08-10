@@ -1,0 +1,148 @@
+table fact_av_incident
+
+	column report_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: report_id
+
+	column report_version
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: report_version
+
+	column company_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: company_id
+
+	column reporting_entity_standardized
+		dataType: string
+		summarizeBy: none
+		sourceColumn: reporting_entity_standardized
+
+	column report_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: report_type
+
+	column incident_month
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: incident_month
+
+	column submission_month
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: submission_month
+
+	column city
+		dataType: string
+		summarizeBy: none
+		sourceColumn: city
+
+	column state
+		dataType: string
+		summarizeBy: none
+		sourceColumn: state
+
+	column make
+		dataType: string
+		summarizeBy: none
+		sourceColumn: make
+
+	column model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: model
+
+	column model_year
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: model_year
+
+	column mileage
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: mileage
+
+	column roadway_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: roadway_type
+
+	column roadway_surface
+		dataType: string
+		summarizeBy: none
+		sourceColumn: roadway_surface
+
+	column lighting
+		dataType: string
+		summarizeBy: none
+		sourceColumn: lighting
+
+	column crash_with
+		dataType: string
+		summarizeBy: none
+		sourceColumn: crash_with
+
+	column highest_injury_severity_alleged
+		dataType: string
+		summarizeBy: none
+		sourceColumn: highest_injury_severity_alleged
+
+	column severity_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: severity_category
+
+	column property_damage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: property_damage
+
+	column sv_pre_crash_movement
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sv_pre_crash_movement
+
+	column sv_precrash_speed_mph
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: sv_precrash_speed_mph
+
+	column within_odd
+		dataType: string
+		summarizeBy: none
+		sourceColumn: within_odd
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column record_hash
+		dataType: string
+		summarizeBy: none
+		sourceColumn: record_hash
+
+	partition fact_av_incident = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="FactIncident",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"report_id", type text}, {"report_version", Int64.Type}, {"company_id", Int64.Type}, {"reporting_entity_standardized", type text}, {"report_type", type text}, {"incident_month", type date}, {"submission_month", type date}, {"city", type text}, {"state", type text}, {"make", type text}, {"model", type text}, {"model_year", Int64.Type}, {"mileage", Int64.Type}, {"roadway_type", type text}, {"roadway_surface", type text}, {"lighting", type text}, {"crash_with", type text}, {"highest_injury_severity_alleged", type text}, {"severity_category", type text}, {"property_damage", type text}, {"sv_pre_crash_movement", type text}, {"sv_precrash_speed_mph", Int64.Type}, {"within_odd", type text}, {"source_id", type text}, {"record_hash", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

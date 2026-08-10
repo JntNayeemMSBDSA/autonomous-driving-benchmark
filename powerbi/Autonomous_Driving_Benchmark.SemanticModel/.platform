@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Autonomous_Driving_Benchmark"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a119ebe1-c96a-408d-99f6-dfb3be713731"
+  }
+}

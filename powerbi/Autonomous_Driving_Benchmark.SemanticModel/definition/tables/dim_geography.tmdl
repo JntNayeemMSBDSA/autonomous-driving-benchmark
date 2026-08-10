@@ -1,0 +1,46 @@
+table dim_geography
+
+	column geography_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: geography_id
+
+	column geography_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geography_name
+
+	column state_code
+		dataType: string
+		summarizeBy: none
+		sourceColumn: state_code
+
+	column country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: country
+
+	column geography_level
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geography_level
+
+	column note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: note
+
+	partition dim_geography = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="DimGeography",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"geography_id", Int64.Type}, {"geography_name", type text}, {"state_code", type text}, {"country", type text}, {"geography_level", type text}, {"note", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

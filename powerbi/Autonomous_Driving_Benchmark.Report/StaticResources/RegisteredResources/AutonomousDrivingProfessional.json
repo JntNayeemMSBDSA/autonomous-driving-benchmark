@@ -1,0 +1,45 @@
+{
+  "name": "Autonomous Driving Executive",
+  "dataColors": [
+    "#2E5E7E",
+    "#557A75",
+    "#866C4D",
+    "#6E7781",
+    "#8A5A62",
+    "#4C6B8A",
+    "#7E8770",
+    "#7A6C86"
+  ],
+  "background": "#F6F7F9",
+  "foreground": "#20262E",
+  "tableAccent": "#2E5E7E",
+  "good": "#557A75",
+  "neutral": "#866C4D",
+  "bad": "#9B4D4D",
+  "maximum": "#2E5E7E",
+  "center": "#B9C2CA",
+  "minimum": "#E5E9ED",
+  "null": "#D6DCE1",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#20262E"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 13,
+      "color": "#20262E"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#20262E"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#4F5B66"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+table fact_company_capability
+
+	column capability_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: capability_id
+
+	column company_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: company_id
+
+	column capability_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: capability_category
+
+	column evidence_summary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: evidence_summary
+
+	column evidence_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: evidence_status
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column evidence_strength_1_5
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: evidence_strength_1_5
+
+	column limitation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: limitation
+
+	partition fact_company_capability = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="FactCapability",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"capability_id", Int64.Type}, {"company_id", Int64.Type}, {"capability_category", type text}, {"evidence_summary", type text}, {"evidence_status", type text}, {"source_id", type text}, {"evidence_strength_1_5", Int64.Type}, {"limitation", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,13 @@
+assumption_id,category,assumption,applies_to,confidence_or_type,validation_or_treatment
+A001,Historical cutoff,Only evidence published on or before 2025-06-30 is used in historical findings,All analytical outputs,High,Search results and source log checked against cutoff
+A002,Role-aware comparison,Tesla/Waymo operator or developer metrics are not treated as identical to NVIDIA/Mobileye supplier metrics,Scalability and executive benchmark,High,Separate ecosystem-role dimension and comparability flags
+A003,Cloud price snapshot,"Hourly prices are standardized reference snapshots, not current quotes or invoices",GPU scenarios,Medium,Source date retained; regional and discount sensitivity included
+A004,Discount factors,Committed-use scenario uses 0.70x on-demand; interruptible scenario uses 0.45x,GPU scenarios,Scenario assumption,"Explicit parameter, not provider fact"
+A005,Storage price,Object storage is standardized at $23 per TB-month,GPU scenarios,Scenario assumption,Sensitivity range 50% to 200%
+A006,Egress price,Data egress standardized at $90 per TB,GPU scenarios,Scenario assumption,Ingress assumed zero; sensitivity range 0 to $180/TB
+A007,Checkpoint storage,Checkpoint volume is added to persistent storage for the stated duration,GPU scenarios,Scenario assumption,Separated in component output
+A008,Utilization,Required wall-clock capacity is divided by utilization to reflect idle/coordination overhead,GPU scenarios,Scenario assumption,Utilization sensitivity from 50% to 95%
+A009,Simulation pricing,Simulation uses the same per-GPU-hour rate as training for transparent standardization,GPU scenarios,Scenario assumption,Real workloads may use different GPU/CPU mixes
+A010,Scoring scale,"Scalability scores are 1 to 5 ordinal judgments, not measured physical quantities",Scalability model,Medium,Evidence source and criterion definition retained
+A011,Sensor complexity score,"A high score means simpler cost/integration burden, not more redundant perception",Scalability model,High,Definition embedded in criteria table
+A012,NHTSA sample,Included NHTSA excerpt is for schema and pipeline validation only,Incident pipeline,High,Excluded from substantive rate estimates

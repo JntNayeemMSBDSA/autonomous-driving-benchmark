@@ -1,0 +1,8 @@
+data_domain,layer,record_count,reconciliation_note
+NHTSA schema excerpt,Raw,3,Verified excerpt only
+NHTSA schema excerpt,Staging,3,Standardized columns and dates
+NHTSA schema excerpt,Clean,3,Latest report version retained
+Sources,Manual,35,All cutoff-valid
+GPU prices,Clean,6,Six dated price configurations
+GPU cost scenarios,Output,54,3 workloads x 6 instances x 3 price models
+Scalability scores,Clean,48,4 companies x 12 criteria

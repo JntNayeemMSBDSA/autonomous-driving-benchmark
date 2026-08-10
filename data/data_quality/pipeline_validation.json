@@ -1,0 +1,56 @@
+[
+  {
+    "check_name": "Historical cutoff",
+    "status": "PASS",
+    "expected": "All source dates at or before cutoff",
+    "actual": "2025-06-30",
+    "details": "Prevents post-cutoff evidence leakage"
+  },
+  {
+    "check_name": "Unique source IDs",
+    "status": "PASS",
+    "expected": "Unique",
+    "actual": 35,
+    "details": "Source traceability key"
+  },
+  {
+    "check_name": "Four canonical companies",
+    "status": "PASS",
+    "expected": "Four canonical names",
+    "actual": [
+      "Mobileye",
+      "NVIDIA",
+      "Tesla",
+      "Waymo"
+    ],
+    "details": "Company-name standardization"
+  },
+  {
+    "check_name": "Positive GPU prices",
+    "status": "PASS",
+    "expected": "All > 0",
+    "actual": 3.67,
+    "details": "Range check"
+  },
+  {
+    "check_name": "Cost reconciliation",
+    "status": "PASS",
+    "expected": "Max difference < 0.01",
+    "actual": 4.656612873077393e-10,
+    "details": "Total equals cost components"
+  },
+  {
+    "check_name": "Score range",
+    "status": "PASS",
+    "expected": "1 to 5",
+    "actual": "2 to 5",
+    "details": "Ordinal constraint"
+  },
+  {
+    "check_name": "SQLite foreign keys",
+    "status": "PASS",
+    "expected": "No violations",
+    "actual": 0,
+    "details": "Executed database integrity"
+  }
+]

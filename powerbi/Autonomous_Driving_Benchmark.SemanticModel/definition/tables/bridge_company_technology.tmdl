@@ -1,0 +1,33 @@
+table bridge_company_technology
+
+	column company_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: company_id
+
+	column technology_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: technology_id
+
+	column relationship_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: relationship_type
+
+	partition bridge_company_technology = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="BridgeCompanyTechnology",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"company_id", Int64.Type}, {"technology_id", Int64.Type}, {"relationship_type", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

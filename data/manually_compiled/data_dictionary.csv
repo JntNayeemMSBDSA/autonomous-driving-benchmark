@@ -1,0 +1,167 @@
+table_name,field_name,data_type,key_type,nullable,field_description,transformation_rule,comparability
+dim_company,company_id,int64,Primary key,No,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+dim_company,company_name,object,Attribute,No,Company name,,Context-dependent
+dim_company,ecosystem_role,object,Attribute,No,Ecosystem role,,Context-dependent
+dim_company,business_model_classification,object,Attribute,No,Business model classification,,Context-dependent
+dim_company,automation_exposure,object,Attribute,No,Automation exposure,,Context-dependent
+dim_company,sensor_strategy_summary,object,Attribute,No,Sensor strategy summary,,Context-dependent
+dim_company,in_vehicle_compute_summary,object,Attribute,No,In vehicle compute summary,,Context-dependent
+dim_company,commercial_model,object,Attribute,No,Commercial model,,Context-dependent
+dim_company,comparability_boundary,object,Attribute,No,Comparability boundary,,Context-dependent
+dim_company,geographic_reach_summary,object,Attribute,No,Geographic reach summary,,Context-dependent
+dim_company,primary_source_id,object,Attribute,No,Primary source id,,Context-dependent
+dim_date,date_key,int64,Primary key,No,Date key,,Context-dependent
+dim_date,full_date,object,Attribute,No,Full date,,Context-dependent
+dim_date,year,int32,Attribute,No,Year,,Context-dependent
+dim_date,quarter,object,Attribute,No,Quarter,,Context-dependent
+dim_date,month_number,int32,Attribute,No,Month number,,Context-dependent
+dim_date,month_name,object,Attribute,No,Month name,,Context-dependent
+dim_date,year_month,object,Attribute,No,Year month,,Context-dependent
+dim_date,cutoff_valid,bool,Attribute,No,"Flag confirming publication or date is on or before June 30, 2025.",,Context-dependent
+dim_geography,geography_id,int64,Primary key,No,Geography id,,Context-dependent
+dim_geography,geography_name,object,Attribute,No,Geography name,,Context-dependent
+dim_geography,state_code,object,Attribute,Yes,State code,,Context-dependent
+dim_geography,country,object,Attribute,No,Country,,Context-dependent
+dim_geography,geography_level,object,Attribute,No,Geography level,,Context-dependent
+dim_geography,note,object,Attribute,No,Note,,Context-dependent
+dim_source,source_id,object,Primary key,No,Traceability key to the complete source log.,,Context-dependent
+dim_source,organization,object,Attribute,No,Organization,,Context-dependent
+dim_source,title,object,Attribute,No,Title,,Context-dependent
+dim_source,source_type,object,Attribute,No,Source type,,Context-dependent
+dim_source,historical_period_covered,object,Attribute,No,Historical period covered,,Context-dependent
+dim_source,source_url,object,Attribute,No,Source url,,Context-dependent
+dim_source,variables_or_claims_supported,object,Attribute,No,Variables or claims supported,,Context-dependent
+dim_source,reliability_classification,object,Attribute,No,Reliability classification,,Context-dependent
+dim_source,relevant_limitations,object,Attribute,No,Relevant limitations,,Context-dependent
+dim_source,source_class,object,Attribute,No,Source class,,Context-dependent
+dim_source,cutoff_valid,bool,Attribute,No,"Flag confirming publication or date is on or before June 30, 2025.",publication_date <= 2025-06-30.,Context-dependent
+dim_source,publication_date,object,Attribute,No,Publication date,,Context-dependent
+dim_source,access_date,object,Attribute,No,Access date,,Context-dependent
+dim_source,is_primary,int64,Attribute,No,Is primary,,Context-dependent
+dim_technology,technology_id,int64,Primary key,No,Technology id,,Context-dependent
+dim_technology,technology_name,object,Attribute,No,Technology name,,Context-dependent
+dim_technology,technology_category,object,Attribute,No,Technology category,,Context-dependent
+dim_technology,description,object,Attribute,No,Description,,Context-dependent
+dim_technology,input_or_unit,object,Attribute,No,Input or unit,,Context-dependent
+dim_technology,comparability_warning,object,Attribute,No,Reason the field or technology must not be treated as directly equivalent.,,Context-dependent
+fact_av_incident,report_id,object,Primary key,No,Report id,,Context-dependent
+fact_av_incident,report_version,int64,Attribute,No,NHTSA report version; latest version is retained during deduplication.,,Context-dependent
+fact_av_incident,company_id,int64,Foreign key -> dim_company.company_id,No,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+fact_av_incident,reporting_entity_standardized,object,Attribute,No,Reporting entity standardized,Trimmed and standardized from preserved raw field.,Context-dependent
+fact_av_incident,report_type,object,Attribute,No,Report type,,Context-dependent
+fact_av_incident,incident_month,object,Attribute,No,Incident month,Parsed from NHTSA month-year text.,Context-dependent
+fact_av_incident,submission_month,object,Attribute,No,Submission month,Parsed from NHTSA month-year text.,Context-dependent
+fact_av_incident,city,object,Attribute,No,City,,Context-dependent
+fact_av_incident,state,object,Attribute,No,State,Trimmed and standardized from preserved raw field.,Context-dependent
+fact_av_incident,make,object,Attribute,No,Make,,Context-dependent
+fact_av_incident,model,object,Attribute,No,Model,Trimmed and standardized from preserved raw field.,Context-dependent
+fact_av_incident,model_year,int64,Attribute,No,Model year,,Context-dependent
+fact_av_incident,mileage,int64,Attribute,No,Mileage,,Context-dependent
+fact_av_incident,roadway_type,object,Attribute,No,Roadway type,,Context-dependent
+fact_av_incident,roadway_surface,object,Attribute,No,Roadway surface,,Context-dependent
+fact_av_incident,lighting,object,Attribute,No,Lighting,,Context-dependent
+fact_av_incident,crash_with,object,Attribute,No,Crash with,,Context-dependent
+fact_av_incident,highest_injury_severity_alleged,object,Attribute,No,Highest injury severity alleged,,Context-dependent
+fact_av_incident,severity_category,object,Attribute,No,Severity category,,Context-dependent
+fact_av_incident,property_damage,object,Attribute,No,Property damage,,Context-dependent
+fact_av_incident,sv_pre_crash_movement,object,Attribute,No,Sv pre crash movement,,Context-dependent
+fact_av_incident,sv_precrash_speed_mph,int64,Attribute,No,Sv precrash speed mph,,Context-dependent
+fact_av_incident,within_odd,object,Attribute,No,Within odd,,Context-dependent
+fact_av_incident,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_av_incident,record_hash,object,Attribute,No,SHA-256 hash of the standardized source row for reproducibility.,,Context-dependent
+fact_deployment_mileage,deployment_metric_id,int64,Primary key,No,Deployment metric id,,Context-dependent
+fact_deployment_mileage,company_id,float64,Foreign key -> dim_company.company_id,Yes,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+fact_deployment_mileage,metric_date,object,Attribute,No,Metric date,,Context-dependent
+fact_deployment_mileage,metric_name,object,Attribute,No,Metric name,,Context-dependent
+fact_deployment_mileage,unit,object,Attribute,No,Unit,,Context-dependent
+fact_deployment_mileage,metric_value,int64,Attribute,No,Numeric value preserved with its explicit unit and period type.,,No
+fact_deployment_mileage,period_type,object,Attribute,No,Period type,,Context-dependent
+fact_deployment_mileage,geography,object,Attribute,No,Geography,,Context-dependent
+fact_deployment_mileage,reporting_method,object,Attribute,No,Reporting method,,Context-dependent
+fact_deployment_mileage,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_deployment_mileage,historical_cutoff_valid,bool,Attribute,No,"Record-level flag for the June 30, 2025 cutoff.",,Context-dependent
+fact_deployment_mileage,limitation,object,Attribute,No,Row-specific caveat required for interpretation.,,Context-dependent
+fact_disengagement,disengagement_id,int64,Primary key,No,Disengagement id,,Context-dependent
+fact_disengagement,company_id,float64,Foreign key -> dim_company.company_id,Yes,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+fact_disengagement,period_start,object,Attribute,No,Period start,,Context-dependent
+fact_disengagement,period_end,object,Attribute,No,Period end,,Context-dependent
+fact_disengagement,total_autonomous_miles,int64,Attribute,No,Total autonomous miles,,Context-dependent
+fact_disengagement,safety_driver_miles,int64,Attribute,No,Safety driver miles,,Context-dependent
+fact_disengagement,driverless_miles,int64,Attribute,No,Driverless miles,,Context-dependent
+fact_disengagement,disengagement_count,float64,Attribute,Yes,Disengagement count,,Context-dependent
+fact_disengagement,geography,object,Attribute,No,Geography,,Context-dependent
+fact_disengagement,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_disengagement,limitation,object,Attribute,No,Row-specific caveat required for interpretation.,,Context-dependent
+fact_company_capability,capability_id,int64,Primary key,No,Capability id,,Context-dependent
+fact_company_capability,company_id,int64,Foreign key -> dim_company.company_id,No,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+fact_company_capability,capability_category,object,Attribute,No,Capability category,,Context-dependent
+fact_company_capability,evidence_summary,object,Attribute,No,Evidence summary,,Context-dependent
+fact_company_capability,evidence_status,object,Attribute,No,Evidence status,,Context-dependent
+fact_company_capability,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_company_capability,evidence_strength_1_5,int64,Attribute,No,Evidence strength 1 5,,No
+fact_company_capability,limitation,object,Attribute,No,Row-specific caveat required for interpretation.,,Context-dependent
+fact_partnership,partnership_id,int64,Primary key,No,Partnership id,,Context-dependent
+fact_partnership,company_id,int64,Foreign key -> dim_company.company_id,No,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+fact_partnership,partner_name,object,Attribute,No,Partner name,,Context-dependent
+fact_partnership,partnership_type,object,Attribute,No,Partnership type,,Context-dependent
+fact_partnership,geography,object,Attribute,No,Geography,,Context-dependent
+fact_partnership,announcement_date,object,Attribute,No,Announcement date,,Context-dependent
+fact_partnership,end_date,object,Attribute,Yes,End date,,Context-dependent
+fact_partnership,scope,object,Attribute,No,Scope,,Context-dependent
+fact_partnership,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_gpu_pricing,gpu_price_id,int64,Primary key,No,Gpu price id,,Context-dependent
+fact_gpu_pricing,cloud_provider,object,Attribute,No,Cloud provider,,Context-dependent
+fact_gpu_pricing,instance_family,object,Attribute,No,Instance family,,Context-dependent
+fact_gpu_pricing,gpu_model,object,Attribute,No,Gpu model,,Context-dependent
+fact_gpu_pricing,instance_type,object,Attribute,No,Instance type,,Context-dependent
+fact_gpu_pricing,gpus_per_instance,int64,Attribute,No,Gpus per instance,,Context-dependent
+fact_gpu_pricing,hourly_price_usd,float64,Attribute,No,Hourly price usd,,Context-dependent
+fact_gpu_pricing,price_per_gpu_hour_usd,float64,Attribute,No,Price per gpu hour usd,,Context-dependent
+fact_gpu_pricing,region_reference,object,Attribute,No,Region reference,,Context-dependent
+fact_gpu_pricing,pricing_model,object,Attribute,No,Pricing model,,Context-dependent
+fact_gpu_pricing,price_snapshot_date,object,Attribute,No,Price snapshot date,,Context-dependent
+fact_gpu_pricing,price_unit,object,Attribute,No,Price unit,,Context-dependent
+fact_gpu_pricing,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_gpu_pricing,limitation,object,Attribute,No,Row-specific caveat required for interpretation.,,Context-dependent
+fact_training_cost_scenario,cost_scenario_id,int64,Primary key,No,Cost scenario id,,Context-dependent
+fact_training_cost_scenario,scenario_id,int64,Attribute,No,Scenario id,,Context-dependent
+fact_training_cost_scenario,scenario_name,object,Attribute,No,Scenario name,,Context-dependent
+fact_training_cost_scenario,gpu_price_id,int64,Foreign key -> fact_gpu_pricing.gpu_price_id,No,Gpu price id,,Context-dependent
+fact_training_cost_scenario,cloud_provider,object,Attribute,No,Cloud provider,,Context-dependent
+fact_training_cost_scenario,instance_type,object,Attribute,No,Instance type,,Context-dependent
+fact_training_cost_scenario,gpu_model,object,Attribute,No,Gpu model,,Context-dependent
+fact_training_cost_scenario,required_gpus,int64,Attribute,No,Required gpus,,Context-dependent
+fact_training_cost_scenario,instances_required,int64,Attribute,No,Instances required,,Context-dependent
+fact_training_cost_scenario,provisioned_gpus,int64,Attribute,No,Provisioned gpus,,Context-dependent
+fact_training_cost_scenario,training_hours_per_run,int64,Attribute,No,Training hours per run,,Context-dependent
+fact_training_cost_scenario,number_of_runs,int64,Attribute,No,Number of runs,,Context-dependent
+fact_training_cost_scenario,utilization_rate,float64,Attribute,No,Utilization rate,,Context-dependent
+fact_training_cost_scenario,discount_model,object,Attribute,No,Discount model,,Context-dependent
+fact_training_cost_scenario,price_factor,float64,Attribute,No,Price factor,,Context-dependent
+fact_training_cost_scenario,training_compute_cost_usd,float64,Attribute,No,Training compute cost usd,Calculated from transparent scenario inputs and documented rates.,Context-dependent
+fact_training_cost_scenario,simulation_compute_cost_usd,float64,Attribute,No,Simulation compute cost usd,Calculated from transparent scenario inputs and documented rates.,Context-dependent
+fact_training_cost_scenario,base_storage_cost_usd,float64,Attribute,No,Base storage cost usd,Calculated from transparent scenario inputs and documented rates.,Context-dependent
+fact_training_cost_scenario,checkpoint_storage_cost_usd,float64,Attribute,No,Checkpoint storage cost usd,Calculated from transparent scenario inputs and documented rates.,Context-dependent
+fact_training_cost_scenario,egress_cost_usd,float64,Attribute,No,Egress cost usd,Calculated from transparent scenario inputs and documented rates.,Context-dependent
+fact_training_cost_scenario,total_cost_usd,float64,Attribute,No,"Sum of training, simulation, storage, checkpoint, and egress scenario components.",Calculated from transparent scenario inputs and documented rates.,Context-dependent
+fact_training_cost_scenario,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_training_cost_scenario,interpretation_note,object,Attribute,No,Interpretation note,,Context-dependent
+fact_scalability_score,score_id,int64,Primary key,No,Score id,,Context-dependent
+fact_scalability_score,company_id,int64,Foreign key -> dim_company.company_id,No,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+fact_scalability_score,criterion_id,int64,Attribute,No,Criterion id,,Context-dependent
+fact_scalability_score,score_1_5,int64,Attribute,No,Ordinal public-evidence score from 1 to 5.,,No
+fact_scalability_score,source_id,object,Foreign key -> dim_source.source_id,No,Traceability key to the complete source log.,,Context-dependent
+fact_scalability_score,evidence_note,object,Attribute,No,Evidence note,,Context-dependent
+fact_scalability_score,missing_data_treatment,object,Attribute,No,Missing data treatment,,Context-dependent
+bridge_company_technology,company_id,int64,Primary key,No,Surrogate company key; NULL is used for program-level aggregates.,,Context-dependent
+bridge_company_technology,technology_id,int64,Primary key,No,Technology id,,Context-dependent
+bridge_company_technology,relationship_type,object,Attribute,No,Relationship type,,Context-dependent
+qa_validation_result,validation_id,int64,Primary key,No,Validation id,,Context-dependent
+qa_validation_result,check_name,object,Attribute,No,Check name,,Context-dependent
+qa_validation_result,table_name,object,Attribute,No,Table name,,Context-dependent
+qa_validation_result,severity,object,Attribute,No,Severity,,Context-dependent
+qa_validation_result,status,object,Attribute,No,Status,,Context-dependent
+qa_validation_result,expected,object,Attribute,No,Expected,,Context-dependent
+qa_validation_result,actual,object,Attribute,No,Actual,,Context-dependent
+qa_validation_result,details,object,Attribute,No,Details,,Context-dependent
+qa_validation_result,run_date,object,Attribute,No,Run date,,Context-dependent

@@ -1,0 +1,13 @@
+table weighting_scheme
+
+	column scheme
+		dataType: string
+		summarizeBy: none
+		sourceColumn: scheme
+
+	partition weighting_scheme = m
+		mode: import
+		source = #table(type table [scheme = text], {{"Baseline"}, {"L4 operator lens"}, {"Platform supplier lens"}})
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,90 @@
+table fact_gpu_pricing
+
+	column gpu_price_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: gpu_price_id
+
+	column cloud_provider
+		dataType: string
+		summarizeBy: none
+		sourceColumn: cloud_provider
+
+	column instance_family
+		dataType: string
+		summarizeBy: none
+		sourceColumn: instance_family
+
+	column gpu_model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: gpu_model
+
+	column instance_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: instance_type
+
+	column gpus_per_instance
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: gpus_per_instance
+
+	column hourly_price_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: hourly_price_usd
+
+	column price_per_gpu_hour_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: price_per_gpu_hour_usd
+
+	column region_reference
+		dataType: string
+		summarizeBy: none
+		sourceColumn: region_reference
+
+	column pricing_model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: pricing_model
+
+	column price_snapshot_date
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: price_snapshot_date
+
+	column price_unit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: price_unit
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column limitation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: limitation
+
+	partition fact_gpu_pricing = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="FactGpuPricing",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"gpu_price_id", Int64.Type}, {"cloud_provider", type text}, {"instance_family", type text}, {"gpu_model", type text}, {"instance_type", type text}, {"gpus_per_instance", Int64.Type}, {"hourly_price_usd", type number}, {"price_per_gpu_hour_usd", type number}, {"region_reference", type text}, {"pricing_model", type text}, {"price_snapshot_date", type date}, {"price_unit", type text}, {"source_id", type text}, {"limitation", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

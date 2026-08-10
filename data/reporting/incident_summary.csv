@@ -1,0 +1,4 @@
+reporting_entity_standardized,state,severity_category,report_count,median_reported_vehicle_mileage,comparison_warning
+Waymo,AZ,No injury reported,1,164698.0,Counts are schema-validation outputs only and must not be interpreted as safety rates.
+Waymo,CA,No injury reported,1,69952.0,Counts are schema-validation outputs only and must not be interpreted as safety rates.
+Waymo,TX,No injury reported,1,45257.0,Counts are schema-validation outputs only and must not be interpreted as safety rates.

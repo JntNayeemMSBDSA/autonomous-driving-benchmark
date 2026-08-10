@@ -1,0 +1,23 @@
+* text=auto
+
+# Preserve portable line endings for source-controlled analytical assets
+*.csv text eol=lf
+*.json text eol=lf
+*.ipynb text eol=lf
+*.md text eol=lf
+*.pbip text eol=lf
+*.pbir text eol=lf
+*.pbism text eol=lf
+*.py text eol=lf
+*.sql text eol=lf
+*.tmdl text eol=lf whitespace=-blank-at-eof
+*.txt text eol=lf
+
+# Never apply line-ending conversion to packaged artifacts
+*.db binary
+*.docx binary
+*.pdf binary
+*.pbix binary
+*.png binary
+*.xlsx binary
+*.zip binary

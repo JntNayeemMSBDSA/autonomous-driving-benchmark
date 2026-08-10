@@ -1,0 +1,5 @@
+partnership_id,company_id,partner_name,partnership_type,geography,announcement_date,end_date,scope,source_id
+1,2,Uber,Mobility platform and fleet operations,Austin and Atlanta,2024-09-13,,Waymo operates Driver; Uber manages fleet operations,SRC014
+2,3,Automotive OEM ecosystem,Compute and software platform adoption,Global,2024-03-18,,Production programs and roadmap partnerships,SRC020
+3,4,More than 50 OEMs,ADAS and autonomous-driving supply,Global,2024-12-28,,Long-term design wins across product tiers,SRC023
+4,1,Vehicle customers,Direct distribution and optional software sales,Global,2024-12-31,,Vertically integrated customer channel rather than OEM supply,SRC015

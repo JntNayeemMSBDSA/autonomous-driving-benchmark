@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "a7b03ab72d00e73608e0",
+  "position": {
+    "x": 24,
+    "y": 258,
+    "z": 0,
+    "height": 194,
+    "width": 420,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_training_cost_scenario"
+                    }
+                  },
+                  "Property": "cloud_provider"
+                }
+              },
+              "queryRef": "fact_training_cost_scenario.cloud_provider",
+              "nativeQueryRef": "cloud_provider",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_training_cost_scenario"
+                    }
+                  },
+                  "Property": "instance_type"
+                }
+              },
+              "queryRef": "fact_training_cost_scenario.instance_type",
+              "nativeQueryRef": "instance_type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Total Scenario Cost"
+                }
+              },
+              "queryRef": "dim_company.Total Scenario Cost",
+              "nativeQueryRef": "Total Scenario Cost"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scenario Cost by Provider and Instance'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,13 @@
+criterion_id,criterion_name,definition,baseline_weight,l4_operator_weight,platform_supplier_weight,measurement_method
+1,Data scale,"Breadth, frequency, and relevance of accessible driving data",10,5,8,Evidence of deployed/test data channels; not raw vehicle count alone
+2,Training infrastructure,Ability to train and iterate large models,10,10,12,"Public stack, accelerators, and workflow evidence"
+3,Simulation capabilities,Breadth and maturity of simulation/validation,8,12,10,Closed-loop and scenario coverage evidence
+4,In-vehicle compute,Capability and efficiency of vehicle compute,8,8,12,Production platform and workload fit
+5,Sensor complexity,Manufacturing and operating simplicity,8,4,5,"Higher score means simpler scalable hardware, not necessarily higher perception redundancy"
+6,Geographic scalability,Ability to extend across regions and ODDs,10,8,8,Current reach plus adaptation burden
+7,Hardware dependence,Exposure to proprietary or costly hardware constraints,7,5,6,Higher score means lower dependency/constraint
+8,OEM or fleet integration,Ability to integrate into vehicles or fleet operations,10,8,14,"Production integration, reference platforms, fleet processes"
+9,Deployment maturity,Evidence of production or commercial deployment,10,14,10,Role-specific deployment evidence
+10,Regulatory exposure,Ability to manage regulatory and reporting complexity,7,10,5,Higher score means more manageable exposure
+11,Commercial flexibility,Number and flexibility of routes to market,7,8,7,"Direct, platform, supplier, and partnership options"
+12,Cost scalability,Expected cost curve for hardware and operations,5,8,3,Relative architecture burden; no confidential unit economics

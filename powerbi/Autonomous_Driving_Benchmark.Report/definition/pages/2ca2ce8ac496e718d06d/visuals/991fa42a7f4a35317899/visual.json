@@ -1,0 +1,114 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "991fa42a7f4a35317899",
+  "position": {
+    "x": 460,
+    "y": 258,
+    "z": 0,
+    "height": 194,
+    "width": 420,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_training_cost_scenario"
+                    }
+                  },
+                  "Property": "scenario_name"
+                }
+              },
+              "queryRef": "fact_training_cost_scenario.scenario_name",
+              "nativeQueryRef": "scenario_name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Training Compute Cost"
+                }
+              },
+              "queryRef": "dim_company.Training Compute Cost",
+              "nativeQueryRef": "Training Compute Cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Simulation Compute Cost"
+                }
+              },
+              "queryRef": "dim_company.Simulation Compute Cost",
+              "nativeQueryRef": "Simulation Compute Cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Storage Cost"
+                }
+              },
+              "queryRef": "dim_company.Storage Cost",
+              "nativeQueryRef": "Storage Cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Egress Cost"
+                }
+              },
+              "queryRef": "dim_company.Egress Cost",
+              "nativeQueryRef": "Egress Cost"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cost Composition'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

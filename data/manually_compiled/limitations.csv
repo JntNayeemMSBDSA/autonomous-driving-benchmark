@@ -1,0 +1,15 @@
+limitation_id,topic,limitation,analytical_effect,mitigation
+L001,Exposure denominator,Tesla public system-level miles by software version and ODD are unavailable,Prevents incident-rate normalization,Do not divide Tesla SGO counts by total vehicle deliveries
+L002,Supplier attribution,NVIDIA and Mobileye do not operate one homogeneous public fleet,Prevents direct crash-rate comparison,Evaluate platform capability and integration instead
+L003,Reporting threshold,NHTSA ADS and Level 2 ADAS reporting criteria differ,Raw incident totals are not comparable,Analyze within reporting class and label threshold
+L004,Report revisions,"SGO reports can be updated, corrected, or duplicate earlier versions",Naive record counts overstate incidents,Deduplicate by report ID and retain latest version
+L005,Geography and ODD,Waymo operates in defined service areas while Tesla consumer exposure is geographically broader,Safety outcomes reflect different environments,Use matched benchmarks only where supplied
+L006,California scope,"DMV disengagement data omit private roads, out-of-state testing, below L3, and simulation",Understates total development activity,Use only as a California testing indicator
+L007,Disengagement definition,Intervention practices and testing goals vary by company and period,Disengagement rates are not capability rankings,Use trends within the same entity cautiously
+L008,Mutable web pages,Some technical and price pages change after the cutoff,Risk of present-day contamination,Retain publication/snapshot dates and use filings/releases
+L009,Cloud discounts,Enterprise contracts and reserved capacity are confidential,Scenario cost may differ materially from actual spend,Show on-demand and standardized discount sensitivities
+L010,Training workload,"Exact parameter counts, tokens/frames, epochs, and cluster utilization are confidential",Cannot estimate company expenditure responsibly,Use standardized workloads only
+L011,TOPS comparability,TOPS/TFLOPS vary by numeric precision and architecture,Compute specifications can mislead,Avoid ranking platforms solely by TOPS
+L012,Fleet size definitions,"Vehicles, deployed vehicles, systems shipped, and installed base are different concepts",Cross-company scale metrics are not interchangeable,Preserve metric name and unit; no combined total
+L013,Source transfer,Large official NHTSA archive could not be redistributed in this runtime,Full incident-level execution is not embedded,"Include official URL, acquisition script, schema excerpt, and validation logic"
+L014,Power BI runtime,Power BI Desktop is unavailable in the execution environment,A tested PBIX cannot be produced,"Deliver star-schema workbook, DAX, layouts, guide, and mockups"

@@ -1,0 +1,8 @@
+geography_id,geography_name,state_code,country,geography_level,note
+1,Phoenix,AZ,United States,City,Waymo operating market by cutoff
+2,San Francisco,CA,United States,City,Waymo operating market by cutoff
+3,Los Angeles,CA,United States,City,Waymo operating market by cutoff
+4,Austin,TX,United States,City,Waymo operating market by cutoff
+5,Atlanta,GA,United States,City,"Partnership market announced, not live by cutoff"
+6,California,CA,United States,State,DMV testing-report geography
+7,Global,,Global,Global,OEM/customer reach

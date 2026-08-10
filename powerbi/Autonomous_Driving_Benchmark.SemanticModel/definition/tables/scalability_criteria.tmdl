@@ -1,0 +1,56 @@
+table scalability_criteria
+
+	column criterion_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: criterion_id
+
+	column criterion_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: criterion_name
+
+	column definition
+		dataType: string
+		summarizeBy: none
+		sourceColumn: definition
+
+	column baseline_weight
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: baseline_weight
+
+	column l4_operator_weight
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: l4_operator_weight
+
+	column platform_supplier_weight
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: platform_supplier_weight
+
+	column measurement_method
+		dataType: string
+		summarizeBy: none
+		sourceColumn: measurement_method
+
+	partition scalability_criteria = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="ScoreDetail",Kind="Table"]}[Data],
+				    Selected = Table.SelectColumns(Data, {"criterion_id", "criterion_name", "definition", "baseline_weight", "l4_operator_weight", "platform_supplier_weight", "measurement_method"}),
+				    DistinctRows = Table.Distinct(Selected),
+				    #"Changed Type" = Table.TransformColumnTypes(DistinctRows,{{"criterion_id", Int64.Type}, {"criterion_name", type text}, {"definition", type text}, {"baseline_weight", Int64.Type}, {"l4_operator_weight", Int64.Type}, {"platform_supplier_weight", Int64.Type}, {"measurement_method", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

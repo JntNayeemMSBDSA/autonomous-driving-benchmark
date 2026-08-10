@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "7b8d54deebc5b511127c",
+  "position": {
+    "x": 540,
+    "y": 166,
+    "z": 0,
+    "height": 286,
+    "width": 716,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Deployment Company Label"
+                }
+              },
+              "queryRef": "dim_company.Deployment Company Label",
+              "nativeQueryRef": "Deployment Company Label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_deployment_mileage"
+                    }
+                  },
+                  "Property": "metric_name"
+                }
+              },
+              "queryRef": "fact_deployment_mileage.metric_name",
+              "nativeQueryRef": "metric_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_deployment_mileage"
+                    }
+                  },
+                  "Property": "metric_value"
+                }
+              },
+              "queryRef": "fact_deployment_mileage.metric_value",
+              "nativeQueryRef": "metric_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_deployment_mileage"
+                    }
+                  },
+                  "Property": "unit"
+                }
+              },
+              "queryRef": "fact_deployment_mileage.unit",
+              "nativeQueryRef": "unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_deployment_mileage"
+                    }
+                  },
+                  "Property": "geography"
+                }
+              },
+              "queryRef": "fact_deployment_mileage.geography",
+              "nativeQueryRef": "geography"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_deployment_mileage"
+                    }
+                  },
+                  "Property": "limitation"
+                }
+              },
+              "queryRef": "fact_deployment_mileage.limitation",
+              "nativeQueryRef": "limitation"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Deployment / Exposure Context | Unit Preserved'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

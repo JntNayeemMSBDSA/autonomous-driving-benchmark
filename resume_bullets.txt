@@ -1,0 +1,19 @@
+AUTONOMOUS DRIVING TECHNOLOGY, CLOUD COMPUTING, AND SCALABILITY BENCHMARK
+
+Data Analyst resume bullet
+• Built a reproducible public-data benchmark of Tesla, Waymo, NVIDIA, and Mobileye using Python, SQL, and Power BI-ready tables, with source-controlled safety, deployment, technology, and cloud-cost analyses that preserved role and exposure comparability.
+
+Business Intelligence Analyst resume bullet
+• Designed a normalized SQLite analytics model and four-page Power BI reporting specification for autonomous-driving technology, safety, deployment, GPU cost, and scalability, supported by automated data-quality checks and documented KPI definitions.
+
+Data Scientist or Analytics Engineer resume bullet
+• Engineered an end-to-end Python and SQL pipeline that standardized regulatory and company evidence, modeled multi-provider GPU training scenarios, ran sensitivity analyses, and produced auditable scalability scores under alternative weighting assumptions.
+
+LinkedIn project description
+Reconstructed and substantially expanded an earlier Microsoft client-based global internship project as an independent, publicly reproducible benchmark of Tesla, Waymo, NVIDIA, and Mobileye. I classified the companies by ecosystem role before comparing their sensor strategies, data workflows, in-vehicle compute, training and simulation infrastructure, deployment evidence, safety indicators, commercial models, and scalability constraints. The project includes an executed SQLite database, reproducible Python scripts and notebooks, SQL analytical views, standardized cloud GPU cost scenarios, sensitivity analysis, Power BI-ready data, dashboard mockups, a source register, and automated quality controls. It does not present the four companies as identical competitors, estimate confidential company spending, or claim that the reconstructed outputs are the exact historical deliverables submitted to Microsoft.
+
+Portfolio description
+A role-aware analytics benchmark of autonomous-driving operators, consumer ADAS developers, compute-platform providers, and OEM technology suppliers. The project integrates dated public regulatory, technical, financial, and company evidence through June 30, 2025; separates raw, staging, cleaned, reporting, and quality layers; and demonstrates Python, SQL, relational modeling, scenario analysis, sensitivity testing, data visualization, source governance, and Power BI design. The main finding is that scalability follows different paths across consumer distribution, geofenced Level 4 operations, horizontal compute and simulation platforms, and OEM technology integration, so no single safety or technology ranking is defensible from the available public data.
+
+HONEST MICROSOFT RELATIONSHIP WORDING
+This project is an independent reconstruction and extension of an earlier Microsoft client-based global internship project facilitated through the Russell Palmer Career Management Center at Michigan State University. I was not employed by Microsoft, and the reconstructed package is not represented as the exact historical client deliverable.

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "b08f48111f257e7d86cf",
+  "position": {
+    "x": 24,
+    "y": 186,
+    "z": 11,
+    "height": 62,
+    "width": 1232,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Collect  →  Select  →  Label  →  Train  →  Simulate  →  Validate  →  Deploy  →  Monitor\nOperator, platform, supplier, and consumer-ADAS roles contribute at different stages; presence does not imply equivalence.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "12pt",
+                      "color": "#2E5E7E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

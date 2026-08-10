@@ -1,0 +1,11 @@
+finding_id,finding_type,theme,finding,support_strength,source_ids
+F001,Verified,Ecosystem roles,"The four companies occupy different layers of the ecosystem: Tesla is a consumer Level 2 developer, Waymo is a Level 4 mobility operator, NVIDIA is a compute/software platform provider, and Mobileye is an OEM technology supplier.",High,SRC015;SRC009;SRC018;SRC023
+F002,Verified,Waymo deployment,"By May 2025 Waymo reported more than 1,500 vehicles and more than 250,000 paid trips per week across four operating markets.",High,SRC010
+F003,Verified,Waymo safety evidence,"Waymo published matched benchmark results over 56.7 million rider-only miles, providing the strongest public exposure-aligned safety evidence among the four within the cutoff.",Moderate to high,SRC009
+F004,Verified,Tesla architecture,"Tesla disclosed a primarily vision-based supervised approach, custom in-vehicle compute, fleet learning, and Cortex infrastructure.",High,SRC015
+F005,Verified,NVIDIA platform,"NVIDIA offered a broad train-simulate-deploy platform and reference architecture, but direct vehicle incident rates cannot be attributed to the supplier.",High,SRC018;SRC019;SRC020
+F006,Verified,Mobileye scale,"Mobileye disclosed 29.0 million systems shipped in 2024 and technology in more than 200 million vehicles, but those units span mixed ADAS and autonomy tiers.",High,SRC023
+F007,Inference,Scalability tradeoff,"Tesla's simpler vehicle sensor bill favors manufacturing scale, while Waymo's redundancy favors Level 4 robustness within geofenced service areas at higher hardware and operational complexity.",Moderate,SRC012;SRC015
+F008,Scenario,Cloud cost,"Standardized cloud cost is driven primarily by GPU hours, experiment count, utilization, and price model; storage and transfer are secondary except for very large retained datasets.",Model result,SRC026;SRC027;SRC028;SRC030
+F009,Verified,Safety comparison limitation,"Raw SGO incidents, California collisions, and disengagements cannot establish a universal winner without matched exposure, reporting threshold, ODD, geography, and system-version denominators.",High,SRC001;SRC006
+F010,Unsupported,Confidential spend,"Public data cannot support exact company training expenditure, private fleet utilization, sensor bill of materials, or unit economics.",High,SRC015;SRC018;SRC023

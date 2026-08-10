@@ -1,0 +1,82 @@
+table dim_source
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column organization
+		dataType: string
+		summarizeBy: none
+		sourceColumn: organization
+
+	column title
+		dataType: string
+		summarizeBy: none
+		sourceColumn: title
+
+	column source_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_type
+
+	column publication_date
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: publication_date
+
+	column historical_period_covered
+		dataType: string
+		summarizeBy: none
+		sourceColumn: historical_period_covered
+
+	column access_date
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: access_date
+
+	column source_url
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_url
+
+	column variables_or_claims_supported
+		dataType: string
+		summarizeBy: none
+		sourceColumn: variables_or_claims_supported
+
+	column reliability_classification
+		dataType: string
+		summarizeBy: none
+		sourceColumn: reliability_classification
+
+	column relevant_limitations
+		dataType: string
+		summarizeBy: none
+		sourceColumn: relevant_limitations
+
+	column source_class
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_class
+
+	column cutoff_valid
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: cutoff_valid
+
+	partition dim_source = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="DimSource",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"source_id", type text}, {"organization", type text}, {"title", type text}, {"source_type", type text}, {"publication_date", type date}, {"historical_period_covered", type text}, {"access_date", type date}, {"source_url", type text}, {"variables_or_claims_supported", type text}, {"reliability_classification", type text}, {"relevant_limitations", type text}, {"source_class", type text}, {"cutoff_valid", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

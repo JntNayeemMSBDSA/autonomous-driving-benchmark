@@ -1,0 +1,11 @@
+technology_id,technology_name,technology_category,description,input_or_unit,comparability_warning
+1,Camera perception,Sensor,Visual perception and scene understanding,Images/video,"Not equivalent across camera count, placement, resolution, or software"
+2,Lidar perception,Sensor,Active depth sensing,Point clouds,"Range, wavelength, placement, and fusion differ"
+3,Radar perception,Sensor,Velocity and range sensing,Radar returns,Specifications and processing differ
+4,Fleet learning,Data workflow,Collection of edge cases from deployed/test fleets,"Telemetry, clips, events",Triggering and retention rules are private
+5,Closed-loop simulation,Simulation,Agents respond to autonomous system behavior,Synthetic/reconstructed scenarios,Simulation validity and coverage are private
+6,In-vehicle AI compute,Compute,"Runs perception, prediction, and planning in vehicle",TOPS/TFLOPS and task accelerators,TOPS is not directly comparable across precision and architecture
+7,HD mapping / road model,Localization,Supports localization and prior knowledge,Maps and crowdsourced road data,Map dependence and update cadence differ
+8,Cloud training platform,Training,Distributed model training and experiment management,GPU clusters and data pipelines,Internal cluster size and spend are undisclosed
+9,Safety case and validation,Safety,"Structured evidence, scenario validation, and release gates","Simulation, track, road tests",Evidence scope and release criteria differ
+10,OEM integration platform,Commercial,Hardware/software package integrated by automakers,Reference designs and production programs,Program announcements do not equal deployed volume

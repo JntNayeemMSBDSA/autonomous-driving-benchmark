@@ -1,0 +1,81 @@
+table fact_safety_indicator
+
+	column safety_indicator_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: safety_indicator_id
+
+	column company_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: company_id
+
+	column as_of_date
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: as_of_date
+
+	column indicator_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: indicator_name
+
+	column unit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: unit
+
+	column value
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: value
+
+	column lower_confidence_bound
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: lower_confidence_bound
+
+	column exposure_basis
+		dataType: string
+		summarizeBy: none
+		sourceColumn: exposure_basis
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+
+	column limitation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: limitation
+
+	column company_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: company_name
+
+	partition fact_safety_indicator = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="SafetyIndicators",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"safety_indicator_id", Int64.Type}, {"company_id", Int64.Type}, {"as_of_date", type date}, {"indicator_name", type text}, {"unit", type text}, {"value", Int64.Type}, {"lower_confidence_bound", Int64.Type}, {"exposure_basis", type text}, {"source_id", type text}, {"status", type text}, {"limitation", type text}, {"company_name", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

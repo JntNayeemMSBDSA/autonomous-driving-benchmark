@@ -1,0 +1,270 @@
+table dim_company
+
+	measure 'Historical Cutoff' = DATE(2025, 6, 30)
+		formatString: mmm d, yyyy
+		displayFolder: 01 Executive
+
+	measure 'Historical Cutoff Label' = "Evidence cutoff: " & FORMAT([Historical Cutoff], "mmm d, yyyy")
+		displayFolder: 01 Executive
+
+	measure 'Source Count' = DISTINCTCOUNT(dim_source[source_id])
+		formatString: 0
+		displayFolder: 01 Executive
+
+	measure 'Primary Source Count' = CALCULATE(DISTINCTCOUNT(dim_source[source_id]), dim_source[source_class] = "Primary")
+		formatString: 0
+		displayFolder: 01 Executive
+
+	measure 'Primary Source Share' = DIVIDE([Primary Source Count], [Source Count])
+		formatString: 0.0%
+		displayFolder: 01 Executive
+
+	measure 'Cutoff Violations' = CALCULATE(COUNTROWS(dim_source), dim_source[cutoff_valid] = 0)
+		formatString: 0
+		displayFolder: 01 Executive
+
+	measure 'Selected Company' = SELECTEDVALUE(dim_company[company_name], "All companies")
+		displayFolder: 01 Executive
+
+	measure 'Selected Role' = SELECTEDVALUE(dim_company[ecosystem_role], "Multiple roles selected")
+		displayFolder: 01 Executive
+
+	measure 'Comparability Banner' = VAR Roles = DISTINCTCOUNT(dim_company[ecosystem_role]) RETURN IF(Roles > 1, "Role warning: operator, consumer ADAS, platform, and supplier metrics are not interchangeable.", "Interpret metrics within the selected ecosystem role.")
+		displayFolder: 01 Executive
+
+	measure 'Average Evidence Strength' = AVERAGE(fact_company_capability[evidence_strength_1_5])
+		formatString: 0.0
+		displayFolder: 02 Evidence
+
+	measure 'Verified Capability Count' = CALCULATE(COUNTROWS(fact_company_capability), fact_company_capability[evidence_status] = "Verified")
+		formatString: 0
+		displayFolder: 02 Evidence
+
+	measure 'Capability Evidence Count' = COUNTROWS(fact_company_capability)
+		formatString: 0
+		displayFolder: 02 Evidence
+
+	measure 'Verified Capability Share' = DIVIDE([Verified Capability Count], [Capability Evidence Count])
+		formatString: 0.0%
+		displayFolder: 02 Evidence
+
+	measure 'Deployment Metric Value' = SUM(fact_deployment_mileage[metric_value])
+		formatString: #,0.0
+		displayFolder: 03 Deployment
+
+	measure 'Latest Metric Date' = MAX(fact_deployment_mileage[metric_date])
+		formatString: mmm d, yyyy
+		displayFolder: 03 Deployment
+
+	measure 'Selected Deployment Metric' = SELECTEDVALUE(fact_deployment_mileage[metric_name])
+		displayFolder: 03 Deployment
+
+	measure 'Selected Deployment Unit' = SELECTEDVALUE(fact_deployment_mileage[unit])
+		displayFolder: 03 Deployment
+
+	measure 'Deployment Context Is Valid' = IF(HASONEVALUE(fact_deployment_mileage[metric_name]) && HASONEVALUE(fact_deployment_mileage[unit]), 1, 0)
+		formatString: 0
+		displayFolder: 03 Deployment
+
+	measure 'Deployment Display Value' = IF([Deployment Context Is Valid] = 1, [Deployment Metric Value], BLANK())
+		formatString: #,0.0
+		displayFolder: 03 Deployment
+
+	measure 'Deployment Context Warning' = IF([Deployment Context Is Valid] = 1, BLANK(), "Select one deployment metric and unit. Unlike units must not be aggregated.")
+		displayFolder: 03 Deployment
+
+	measure 'Deployment Company Label' = COALESCE(SELECTEDVALUE(dim_company[company_name]), IF(ISBLANK(SELECTEDVALUE(fact_deployment_mileage[company_id])), "California program total", "Multiple companies"))
+		displayFolder: 03 Deployment
+
+	measure 'Waymo Rider Only Miles' = CALCULATE(SUM(fact_deployment_mileage[metric_value]), dim_company[company_name] = "Waymo", fact_deployment_mileage[metric_name] = "Rider-only autonomous miles")
+		formatString: #,0
+		displayFolder: 03 Deployment
+
+	measure 'Waymo Paid Trips Per Week' = CALCULATE(MAX(fact_deployment_mileage[metric_value]), dim_company[company_name] = "Waymo", fact_deployment_mileage[metric_name] = "Paid trips per week")
+		formatString: #,0
+		displayFolder: 03 Deployment
+
+	measure 'Incident Reports' = DISTINCTCOUNT(fact_av_incident[report_id])
+		formatString: 0
+		displayFolder: 04 Safety
+
+	measure 'No Injury Report Share' = DIVIDE(CALCULATE([Incident Reports], fact_av_incident[severity_category] = "No injury reported"), [Incident Reports])
+		formatString: 0.0%
+		displayFolder: 04 Safety
+
+	measure 'Incident Comparison Warning' = "Raw incident totals are not safety rates. The delivered incidents are a small evidence extract; compare only within reporting class, exposure, geography, system, and period."
+		displayFolder: 04 Safety
+
+	measure 'Safety Indicator Value' = MAX(fact_safety_indicator[value])
+		formatString: 0.00
+		displayFolder: 04 Safety
+
+	measure 'Safety Indicator Lower Bound' = MAX(fact_safety_indicator[lower_confidence_bound])
+		formatString: 0.00
+		displayFolder: 04 Safety
+
+	measure 'Safety Evidence Status' = SELECTEDVALUE(fact_safety_indicator[status])
+		displayFolder: 04 Safety
+
+	measure 'Total Scenario Cost' = SUM(fact_training_cost_scenario[total_cost_usd])
+		formatString: $#,0
+		displayFolder: 05 Cost
+
+	measure 'Training Compute Cost' = SUM(fact_training_cost_scenario[training_compute_cost_usd])
+		formatString: $#,0
+		displayFolder: 05 Cost
+
+	measure 'Simulation Compute Cost' = SUM(fact_training_cost_scenario[simulation_compute_cost_usd])
+		formatString: $#,0
+		displayFolder: 05 Cost
+
+	measure 'Storage Cost' = SUM(fact_training_cost_scenario[base_storage_cost_usd]) + SUM(fact_training_cost_scenario[checkpoint_storage_cost_usd])
+		formatString: $#,0
+		displayFolder: 05 Cost
+
+	measure 'Egress Cost' = SUM(fact_training_cost_scenario[egress_cost_usd])
+		formatString: $#,0
+		displayFolder: 05 Cost
+
+	measure 'Compute Cost Share' = DIVIDE([Training Compute Cost] + [Simulation Compute Cost], [Total Scenario Cost])
+		formatString: 0.0%
+		displayFolder: 05 Cost
+
+	measure 'Cost Component Reconciliation Delta' = [Total Scenario Cost] - [Training Compute Cost] - [Simulation Compute Cost] - [Storage Cost] - [Egress Cost]
+		formatString: $#,0.00
+		displayFolder: 05 Cost
+
+	measure 'Cost Difference From On Demand' = VAR OnDemand = CALCULATE([Total Scenario Cost], REMOVEFILTERS(fact_training_cost_scenario[discount_model]), fact_training_cost_scenario[discount_model] = "On-demand") RETURN [Total Scenario Cost] - OnDemand
+		formatString: $#,0
+		displayFolder: 05 Cost
+
+	measure 'Cost Savings Percent' = VAR OnDemand = CALCULATE([Total Scenario Cost], REMOVEFILTERS(fact_training_cost_scenario[discount_model]), fact_training_cost_scenario[discount_model] = "On-demand") RETURN DIVIDE(OnDemand - [Total Scenario Cost], OnDemand)
+		formatString: 0.0%
+		displayFolder: 05 Cost
+
+	measure 'Sensitivity Change From Baseline' = MAX(fact_cost_sensitivity[change_from_baseline_pct])
+		formatString: 0.0%
+		displayFolder: 05 Cost
+
+	measure 'Sensitivity Baseline Cost' = MAX(fact_cost_sensitivity[baseline_total_cost_usd])
+		formatString: $#,0
+		displayFolder: 05 Cost
+
+	measure 'Scenario Cost Warning' = "Scenario costs are standardized analytical workload outputs, not confidential company expenditures."
+		displayFolder: 05 Cost
+
+	measure 'Baseline Weighted Score' = VAR WeightedPoints = SUMX(fact_scalability_score, fact_scalability_score[score_1_5] * RELATED(scalability_criteria[baseline_weight])) VAR TotalWeight = SUMX(fact_scalability_score, RELATED(scalability_criteria[baseline_weight])) RETURN DIVIDE(WeightedPoints, TotalWeight)
+		formatString: 0.00
+		displayFolder: 06 Scalability
+
+	measure 'L4 Operator Weighted Score' = VAR WeightedPoints = SUMX(fact_scalability_score, fact_scalability_score[score_1_5] * RELATED(scalability_criteria[l4_operator_weight])) VAR TotalWeight = SUMX(fact_scalability_score, RELATED(scalability_criteria[l4_operator_weight])) RETURN DIVIDE(WeightedPoints, TotalWeight)
+		formatString: 0.00
+		displayFolder: 06 Scalability
+
+	measure 'Platform Supplier Weighted Score' = VAR WeightedPoints = SUMX(fact_scalability_score, fact_scalability_score[score_1_5] * RELATED(scalability_criteria[platform_supplier_weight])) VAR TotalWeight = SUMX(fact_scalability_score, RELATED(scalability_criteria[platform_supplier_weight])) RETURN DIVIDE(WeightedPoints, TotalWeight)
+		formatString: 0.00
+		displayFolder: 06 Scalability
+
+	measure 'Selected Weighting Scheme' = SELECTEDVALUE(weighting_scheme[scheme], "Baseline")
+		displayFolder: 06 Scalability
+
+	measure 'Selected Weighted Score' = SWITCH([Selected Weighting Scheme], "L4 operator lens", [L4 Operator Weighted Score], "Platform supplier lens", [Platform Supplier Weighted Score], [Baseline Weighted Score])
+		formatString: 0.00
+		displayFolder: 06 Scalability
+
+	measure 'Selected Weighted Rank' = RANKX(ALLSELECTED(dim_company[company_name]), [Selected Weighted Score], , DESC, Dense)
+		formatString: 0
+		displayFolder: 06 Scalability
+
+	measure 'Scalability Score Warning' = "Scalability scores are ordinal decision aids and change with the selected weighting lens."
+		displayFolder: 06 Scalability
+
+	measure 'QA Checks' = COUNTROWS(qa_validation_result)
+		formatString: 0
+		displayFolder: 99 QA
+
+	measure 'QA Passed' = CALCULATE(COUNTROWS(qa_validation_result), qa_validation_result[status] = "PASS")
+		formatString: 0
+		displayFolder: 99 QA
+
+	measure 'QA Pass Rate' = DIVIDE([QA Passed], [QA Checks])
+		formatString: 0.0%
+		displayFolder: 99 QA
+
+	measure 'Critical QA Failures' = CALCULATE(COUNTROWS(qa_validation_result), qa_validation_result[severity] = "Critical", qa_validation_result[status] <> "PASS")
+		formatString: 0
+		displayFolder: 99 QA
+
+	measure 'Model Health' = IF([Critical QA Failures] = 0 && [Cutoff Violations] = 0 && ABS([Cost Component Reconciliation Delta]) < 0.01, "PASS", "REVIEW")
+		displayFolder: 99 QA
+
+	column company_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: company_id
+
+	column company_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: company_name
+
+	column ecosystem_role
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ecosystem_role
+
+	column business_model_classification
+		dataType: string
+		summarizeBy: none
+		sourceColumn: business_model_classification
+
+	column automation_exposure
+		dataType: string
+		summarizeBy: none
+		sourceColumn: automation_exposure
+
+	column sensor_strategy_summary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sensor_strategy_summary
+
+	column in_vehicle_compute_summary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: in_vehicle_compute_summary
+
+	column commercial_model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: commercial_model
+
+	column comparability_boundary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: comparability_boundary
+
+	column geographic_reach_summary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geographic_reach_summary
+
+	column primary_source_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: primary_source_id
+
+	partition dim_company = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="DimCompany",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"company_id", Int64.Type}, {"company_name", type text}, {"ecosystem_role", type text}, {"business_model_classification", type text}, {"automation_exposure", type text}, {"sensor_strategy_summary", type text}, {"in_vehicle_compute_summary", type text}, {"commercial_model", type text}, {"comparability_boundary", type text}, {"geographic_reach_summary", type text}, {"primary_source_id", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

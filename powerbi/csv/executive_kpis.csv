@@ -1,0 +1,10 @@
+kpi_name,kpi_value,interpretation,source_id
+Historical cutoff,2025-06-30,All evidence frozen at or before cutoff,SRC001
+Primary/authoritative sources,33,out of 35 logged sources,source_log
+Waymo rider-only miles analyzed,56700000,through January 2025,SRC009
+Waymo paid trips per week,250000,minimum reported May 2025,SRC010
+Waymo operating vehicles,1500,minimum reported May 2025,SRC010
+Tesla 2024 deliveries,1789226,not autonomous-mile exposure,SRC015
+Mobileye 2024 systems shipped,29000000,EyeQ and SuperVision systems,SRC023
+California 2024 reporting-period test miles,4498066,all permit holders,SRC006
+Data-quality checks passed,20,out of 20 checks,qa_validation_result

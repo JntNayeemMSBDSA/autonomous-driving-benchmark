@@ -1,0 +1,129 @@
+path,artifact_type,status,details
+README.md,MD,PASS,characters=12381
+assumptions_and_limitations.xlsx,XLSX,PASS,sheets=2 names=Assumptions|Limitations
+data/cleaned/bridge_company_technology.csv,CSV,PASS,rows=30 columns=3
+data/cleaned/dim_company.csv,CSV,PASS,rows=4 columns=11
+data/cleaned/dim_date.csv,CSV,PASS,rows=1642 columns=8
+data/cleaned/dim_geography.csv,CSV,PASS,rows=7 columns=6
+data/cleaned/dim_source.csv,CSV,PASS,rows=35 columns=14
+data/cleaned/dim_technology.csv,CSV,PASS,rows=10 columns=6
+data/cleaned/fact_av_incident.csv,CSV,PASS,rows=3 columns=25
+data/cleaned/fact_av_incident_summary.csv,CSV,PASS,rows=7 columns=11
+data/cleaned/fact_company_capability.csv,CSV,PASS,rows=20 columns=8
+data/cleaned/fact_deployment_mileage.csv,CSV,PASS,rows=11 columns=12
+data/cleaned/fact_disengagement.csv,CSV,PASS,rows=2 columns=11
+data/cleaned/fact_gpu_pricing.csv,CSV,PASS,rows=6 columns=14
+data/cleaned/fact_partnership.csv,CSV,PASS,rows=4 columns=9
+data/cleaned/fact_scalability_score.csv,CSV,PASS,rows=48 columns=7
+data/cleaned/fact_training_cost_scenario.csv,CSV,PASS,rows=54 columns=23
+data/data_quality/missing_value_profile.csv,CSV,PASS,rows=157 columns=7
+data/data_quality/pipeline_validation.csv,CSV,PASS,rows=7 columns=5
+data/data_quality/pipeline_validation.json,JSON,PASS,top_level=list
+data/data_quality/qa_validation_result.csv,CSV,PASS,rows=20 columns=9
+data/data_quality/record_count_reconciliation.csv,CSV,PASS,rows=7 columns=4
+data/manually_compiled/assumptions.csv,CSV,PASS,rows=12 columns=6
+data/manually_compiled/data_dictionary.csv,CSV,PASS,rows=166 columns=8
+data/manually_compiled/gpu_scenarios.csv,CSV,PASS,rows=3 columns=12
+data/manually_compiled/limitations.csv,CSV,PASS,rows=14 columns=5
+data/manually_compiled/pricing_models.csv,CSV,PASS,rows=3 columns=3
+data/manually_compiled/scalability_criteria.csv,CSV,PASS,rows=12 columns=7
+data/manually_compiled/source_log.csv,CSV,PASS,rows=35 columns=13
+data/raw/README.md,MD,PASS,characters=510
+data/raw/acquisition_log.json,JSON,PASS,top_level=list
+data/raw/nhtsa_ads_curated_schema_excerpt.csv,CSV,PASS,rows=3 columns=27
+data/reporting/company_benchmark.csv,CSV,PASS,rows=4 columns=12
+data/reporting/deployment_metrics.csv,CSV,PASS,rows=11 columns=15
+data/reporting/executive_kpis.csv,CSV,PASS,rows=9 columns=4
+data/reporting/findings_summary.csv,CSV,PASS,rows=10 columns=6
+data/reporting/gpu_cost_sensitivity.csv,CSV,PASS,rows=81 columns=10
+data/reporting/incident_summary.csv,CSV,PASS,rows=3 columns=6
+data/reporting/safety_indicators.csv,CSV,PASS,rows=7 columns=12
+data/reporting/scalability_score_detail.csv,CSV,PASS,rows=48 columns=17
+data/reporting/scalability_weighted_scores.csv,CSV,PASS,rows=12 columns=7
+data/reporting/technology_matrix.csv,CSV,PASS,rows=30 columns=7
+data/staging/nhtsa_incidents_standardized.csv,CSV,PASS,rows=3 columns=34
+data_dictionary.xlsx,XLSX,PASS,sheets=2 names=Data Dictionary|Table Inventory
+documentation/known_limitations.md,MD,PASS,characters=3376
+documentation/reproducibility_guide.md,MD,PASS,characters=1498
+documentation/source_notes.md,MD,PASS,characters=1698
+documentation/transformation_log.md,MD,PASS,characters=1780
+executive_summary.pdf,PDF,PASS,pages=7 text_chars=9681
+interview_guide.docx,DOCX,PASS,paragraphs=106 tables=10
+methodology.md,MD,PASS,characters=6231
+notebooks/01_data_acquisition_and_audit.ipynb,Notebook,PASS,cells=6 error_outputs=0
+notebooks/02_safety_and_deployment_analysis.ipynb,Notebook,PASS,cells=6 error_outputs=0
+notebooks/03_gpu_cost_scenarios.ipynb,Notebook,PASS,cells=6 error_outputs=0
+notebooks/04_scalability_analysis.ipynb,Notebook,PASS,cells=6 error_outputs=0
+outputs/charts/01_ecosystem_role_map.png,PNG,PASS,dimensions=1584x912
+outputs/charts/02_capability_evidence_heatmap.png,PNG,PASS,dimensions=1301x782
+outputs/charts/03_deployment_distribution_snapshot.png,PNG,PASS,dimensions=1593x859
+outputs/charts/04_california_testing_miles.png,PNG,PASS,dimensions=1341x782
+outputs/charts/05_waymo_safety_matched_benchmark.png,PNG,PASS,dimensions=1342x730
+outputs/charts/06_gpu_scenario_costs.png,PNG,PASS,dimensions=1741x942
+outputs/charts/07_gpu_cost_composition.png,PNG,PASS,dimensions=1419x860
+outputs/charts/08_gpu_cost_sensitivity.png,PNG,PASS,dimensions=1424x780
+outputs/charts/09_scalability_weight_sensitivity.png,PNG,PASS,dimensions=1421x775
+outputs/charts/10_scalability_criteria_profile.png,PNG,PASS,dimensions=1583x1100
+outputs/charts/11_entity_relationship_diagram.png,PNG,PASS,dimensions=1878x1212
+outputs/findings_summary.xlsx,XLSX,PASS,sheets=3 names=Findings|Executive KPIs|Weighted Scores
+outputs/quality_report.xlsx,XLSX,PASS,sheets=3 names=Validation Results|Missing Profile|Reconciliation
+outputs/tables/company_capability_summary.csv,CSV,PASS,rows=4 columns=4
+outputs/tables/latest_deployment.csv,CSV,PASS,rows=10 columns=6
+outputs/tables/lowest_scenario_cost.csv,CSV,PASS,rows=9 columns=6
+outputs/tables/qa_validation_result.csv,CSV,PASS,rows=20 columns=9
+powerbi/csv/bridge_company_technology.csv,CSV,PASS,rows=30 columns=3
+powerbi/csv/company_benchmark.csv,CSV,PASS,rows=4 columns=12
+powerbi/csv/deployment_metrics.csv,CSV,PASS,rows=11 columns=15
+powerbi/csv/dim_company.csv,CSV,PASS,rows=4 columns=11
+powerbi/csv/dim_date.csv,CSV,PASS,rows=1642 columns=8
+powerbi/csv/dim_geography.csv,CSV,PASS,rows=7 columns=6
+powerbi/csv/dim_source.csv,CSV,PASS,rows=35 columns=14
+powerbi/csv/dim_technology.csv,CSV,PASS,rows=10 columns=6
+powerbi/csv/executive_kpis.csv,CSV,PASS,rows=9 columns=4
+powerbi/csv/fact_av_incident.csv,CSV,PASS,rows=3 columns=25
+powerbi/csv/fact_company_capability.csv,CSV,PASS,rows=20 columns=8
+powerbi/csv/fact_deployment_mileage.csv,CSV,PASS,rows=11 columns=12
+powerbi/csv/fact_disengagement.csv,CSV,PASS,rows=2 columns=11
+powerbi/csv/fact_gpu_pricing.csv,CSV,PASS,rows=6 columns=14
+powerbi/csv/fact_partnership.csv,CSV,PASS,rows=4 columns=9
+powerbi/csv/fact_scalability_score.csv,CSV,PASS,rows=48 columns=7
+powerbi/csv/fact_training_cost_scenario.csv,CSV,PASS,rows=54 columns=23
+powerbi/csv/findings_summary.csv,CSV,PASS,rows=10 columns=6
+powerbi/csv/gpu_cost_sensitivity.csv,CSV,PASS,rows=81 columns=10
+powerbi/csv/incident_summary.csv,CSV,PASS,rows=3 columns=6
+powerbi/csv/safety_indicators.csv,CSV,PASS,rows=7 columns=12
+powerbi/csv/scalability_score_detail.csv,CSV,PASS,rows=48 columns=17
+powerbi/csv/scalability_weighted_scores.csv,CSV,PASS,rows=12 columns=7
+powerbi/csv/technology_matrix.csv,CSV,PASS,rows=30 columns=7
+powerbi/dashboard_build_guide.docx,DOCX,PASS,paragraphs=138 tables=14
+powerbi/data_model_specification.md,MD,PASS,characters=5281
+powerbi/dax_measures.txt,TXT,PASS,characters=4388
+powerbi/mockups/report_1_executive_benchmark_mockup.png,PNG,PASS,dimensions=1579x896
+powerbi/mockups/report_2_adas_workflow_mockup.png,PNG,PASS,dimensions=1579x896
+powerbi/mockups/report_3_safety_deployment_mockup.png,PNG,PASS,dimensions=1579x896
+powerbi/mockups/report_4_gpu_scalability_mockup.png,PNG,PASS,dimensions=1579x896
+powerbi/powerbi_ready_data.xlsx,XLSX,PASS,sheets=20 names=Scenario Calculator|Executive Summary|Companies|Capabilities|Deployment|Safety Indicators|GPU Pricing|Cost Scenarios|Cost Sensitivity|Scalability Scores|Weighted Scores|Score Detail|Technology|Company Technology|Partnerships|Sources|Geography|Incidents|Date|QA Results
+project_report.docx,DOCX,PASS,paragraphs=177 tables=16
+project_report.pdf,PDF,PASS,pages=20 text_chars=30244
+python/acquire_data.py,Python,PASS,syntax compilation succeeded
+python/analyze_deployment.py,Python,PASS,syntax compilation succeeded
+python/analyze_incidents.py,Python,PASS,syntax compilation succeeded
+python/build_database.py,Python,PASS,syntax compilation succeeded
+python/clean_data.py,Python,PASS,syntax compilation succeeded
+python/config.py,Python,PASS,syntax compilation succeeded
+python/export_powerbi_tables.py,Python,PASS,syntax compilation succeeded
+python/gpu_cost_model.py,Python,PASS,syntax compilation succeeded
+python/run_pipeline.py,Python,PASS,syntax compilation succeeded
+python/scalability_model.py,Python,PASS,syntax compilation succeeded
+python/validate_data.py,Python,PASS,syntax compilation succeeded
+requirements.txt,TXT,PASS,characters=83
+resume_bullets.txt,TXT,PASS,characters=3080
+source_log.xlsx,XLSX,PASS,sheets=2 names=Source Log|Reliability Guide
+sql/01_create_schema.sql,SQL,PASS,characters=8463
+sql/02_load_data.sql,SQL,PASS,characters=1337
+sql/03_clean_transform.sql,SQL,PASS,characters=1452
+sql/04_validation_checks.sql,SQL,PASS,characters=2095
+sql/05_analytical_queries.sql,SQL,PASS,characters=2742
+sql/06_reporting_views.sql,SQL,PASS,characters=1910
+sql/07_sqlserver_compatible_schema.sql,SQL,PASS,characters=12423
+sql/autonomous_driving.db,SQLite,PASS,integrity=ok fk_violations=0 tables=15 views=5

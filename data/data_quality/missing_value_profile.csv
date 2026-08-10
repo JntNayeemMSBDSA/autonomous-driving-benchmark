@@ -1,0 +1,158 @@
+table_name,field_name,data_type,row_count,missing_count,missing_pct,distinct_count
+source_log,source_id,object,35,0,0.0,35
+source_log,organization,object,35,0,0.0,13
+source_log,title,object,35,0,0.0,35
+source_log,source_type,object,35,0,0.0,22
+source_log,publication_date,datetime64[ns],35,0,0.0,26
+source_log,historical_period_covered,object,35,0,0.0,33
+source_log,access_date,datetime64[ns],35,0,0.0,1
+source_log,source_url,object,35,0,0.0,35
+source_log,variables_or_claims_supported,object,35,0,0.0,35
+source_log,reliability_classification,object,35,0,0.0,12
+source_log,relevant_limitations,object,35,0,0.0,35
+source_log,source_class,object,35,0,0.0,2
+source_log,cutoff_valid,bool,35,0,0.0,1
+dim_company,company_id,int64,4,0,0.0,4
+dim_company,company_name,object,4,0,0.0,4
+dim_company,ecosystem_role,object,4,0,0.0,4
+dim_company,business_model_classification,object,4,0,0.0,4
+dim_company,automation_exposure,object,4,0,0.0,4
+dim_company,sensor_strategy_summary,object,4,0,0.0,4
+dim_company,in_vehicle_compute_summary,object,4,0,0.0,4
+dim_company,commercial_model,object,4,0,0.0,4
+dim_company,comparability_boundary,object,4,0,0.0,4
+dim_company,geographic_reach_summary,object,4,0,0.0,4
+dim_company,primary_source_id,object,4,0,0.0,4
+technology,technology_id,int64,10,0,0.0,10
+technology,technology_name,object,10,0,0.0,10
+technology,technology_category,object,10,0,0.0,8
+technology,description,object,10,0,0.0,10
+technology,input_or_unit,object,10,0,0.0,10
+technology,comparability_warning,object,10,0,0.0,10
+capabilities,capability_id,int64,20,0,0.0,20
+capabilities,company_id,int64,20,0,0.0,4
+capabilities,capability_category,object,20,0,0.0,5
+capabilities,evidence_summary,object,20,0,0.0,20
+capabilities,evidence_status,object,20,0,0.0,3
+capabilities,source_id,object,20,0,0.0,10
+capabilities,evidence_strength_1_5,int64,20,0,0.0,3
+capabilities,limitation,object,20,0,0.0,20
+deployment,deployment_metric_id,int64,11,0,0.0,11
+deployment,company_id,int64,11,0,0.0,4
+deployment,metric_date,datetime64[ns],11,0,0.0,7
+deployment,metric_name,object,11,0,0.0,10
+deployment,unit,object,11,0,0.0,6
+deployment,metric_value,int64,11,0,0.0,11
+deployment,period_type,object,11,0,0.0,5
+deployment,geography,object,11,0,0.0,6
+deployment,reporting_method,object,11,0,0.0,4
+deployment,source_id,object,11,0,0.0,7
+deployment,historical_cutoff_valid,bool,11,0,0.0,1
+deployment,limitation,object,11,0,0.0,9
+safety,safety_indicator_id,int64,7,0,0.0,7
+safety,company_id,int64,7,0,0.0,4
+safety,as_of_date,object,7,0,0.0,3
+safety,indicator_name,object,7,0,0.0,6
+safety,unit,object,7,0,0.0,4
+safety,value,float64,7,4,57.14,3
+safety,lower_confidence_bound,float64,7,5,71.43,2
+safety,exposure_basis,object,7,0,0.0,5
+safety,source_id,object,7,0,0.0,5
+safety,status,object,7,0,0.0,3
+safety,limitation,object,7,0,0.0,7
+gpu_pricing,gpu_price_id,int64,6,0,0.0,6
+gpu_pricing,cloud_provider,object,6,0,0.0,3
+gpu_pricing,instance_family,object,6,0,0.0,6
+gpu_pricing,gpu_model,object,6,0,0.0,3
+gpu_pricing,instance_type,object,6,0,0.0,6
+gpu_pricing,gpus_per_instance,int64,6,0,0.0,2
+gpu_pricing,hourly_price_usd,float64,6,0,0.0,5
+gpu_pricing,price_per_gpu_hour_usd,float64,6,0,0.0,5
+gpu_pricing,region_reference,object,6,0,0.0,3
+gpu_pricing,pricing_model,object,6,0,0.0,1
+gpu_pricing,price_snapshot_date,object,6,0,0.0,1
+gpu_pricing,price_unit,object,6,0,0.0,1
+gpu_pricing,source_id,object,6,0,0.0,3
+gpu_pricing,limitation,object,6,0,0.0,6
+cost_outputs,cost_scenario_id,int64,54,0,0.0,54
+cost_outputs,scenario_id,int64,54,0,0.0,3
+cost_outputs,scenario_name,object,54,0,0.0,3
+cost_outputs,gpu_price_id,int64,54,0,0.0,6
+cost_outputs,cloud_provider,object,54,0,0.0,3
+cost_outputs,instance_type,object,54,0,0.0,6
+cost_outputs,gpu_model,object,54,0,0.0,3
+cost_outputs,required_gpus,int64,54,0,0.0,3
+cost_outputs,instances_required,int64,54,0,0.0,3
+cost_outputs,provisioned_gpus,int64,54,0,0.0,3
+cost_outputs,training_hours_per_run,int64,54,0,0.0,3
+cost_outputs,number_of_runs,int64,54,0,0.0,3
+cost_outputs,utilization_rate,float64,54,0,0.0,3
+cost_outputs,discount_model,object,54,0,0.0,3
+cost_outputs,price_factor,float64,54,0,0.0,3
+cost_outputs,training_compute_cost_usd,float64,54,0,0.0,45
+cost_outputs,simulation_compute_cost_usd,float64,54,0,0.0,45
+cost_outputs,base_storage_cost_usd,float64,54,0,0.0,3
+cost_outputs,checkpoint_storage_cost_usd,float64,54,0,0.0,3
+cost_outputs,egress_cost_usd,float64,54,0,0.0,3
+cost_outputs,total_cost_usd,float64,54,0,0.0,45
+cost_outputs,source_id,object,54,0,0.0,3
+cost_outputs,interpretation_note,object,54,0,0.0,1
+scalability_scores,score_id,int64,48,0,0.0,48
+scalability_scores,company_id,int64,48,0,0.0,4
+scalability_scores,criterion_id,int64,48,0,0.0,12
+scalability_scores,score_1_5,int64,48,0,0.0,4
+scalability_scores,source_id,object,48,0,0.0,14
+scalability_scores,evidence_note,object,48,0,0.0,1
+scalability_scores,missing_data_treatment,object,48,0,0.0,1
+nhtsa_excerpt,Report ID,object,3,0,0.0,3
+nhtsa_excerpt,Report Version,int64,3,0,0.0,1
+nhtsa_excerpt,Reporting Entity,object,3,0,0.0,1
+nhtsa_excerpt,Report Type,object,3,0,0.0,2
+nhtsa_excerpt,Report Month,float64,3,2,66.67,1
+nhtsa_excerpt,Report Year,float64,3,2,66.67,1
+nhtsa_excerpt,Report Submission Date,object,3,0,0.0,1
+nhtsa_excerpt,Make,object,3,0,0.0,1
+nhtsa_excerpt,Model,object,3,0,0.0,1
+nhtsa_excerpt,Model Year,int64,3,0,0.0,2
+nhtsa_excerpt,Mileage,int64,3,0,0.0,3
+nhtsa_excerpt,Driver / Operator Type,object,3,0,0.0,1
+nhtsa_excerpt,Operating Entity,object,3,0,0.0,1
+nhtsa_excerpt,Incident Date,object,3,0,0.0,2
+nhtsa_excerpt,City,object,3,0,0.0,3
+nhtsa_excerpt,State,object,3,0,0.0,3
+nhtsa_excerpt,Roadway Type,object,3,0,0.0,1
+nhtsa_excerpt,Roadway Surface,object,3,0,0.0,1
+nhtsa_excerpt,Lighting,object,3,0,0.0,2
+nhtsa_excerpt,Crash With,object,3,0,0.0,2
+nhtsa_excerpt,Highest Injury Severity Alleged,object,3,0,0.0,1
+nhtsa_excerpt,Property Damage?,object,3,0,0.0,1
+nhtsa_excerpt,SV Pre-Crash Movement,object,3,0,0.0,2
+nhtsa_excerpt,SV Precrash Speed (MPH),int64,3,0,0.0,1
+nhtsa_excerpt,Within ODD?,object,3,0,0.0,1
+nhtsa_excerpt,Source ID,object,3,0,0.0,1
+nhtsa_excerpt,Project Note,object,3,0,0.0,1
+nhtsa_clean,report_id,object,3,0,0.0,3
+nhtsa_clean,report_version,int64,3,0,0.0,1
+nhtsa_clean,company_id,int64,3,0,0.0,1
+nhtsa_clean,reporting_entity_standardized,object,3,0,0.0,1
+nhtsa_clean,report_type,object,3,0,0.0,2
+nhtsa_clean,incident_month,datetime64[ns],3,0,0.0,2
+nhtsa_clean,submission_month,datetime64[ns],3,0,0.0,1
+nhtsa_clean,city,object,3,0,0.0,3
+nhtsa_clean,state,object,3,0,0.0,3
+nhtsa_clean,make,object,3,0,0.0,1
+nhtsa_clean,model,object,3,0,0.0,1
+nhtsa_clean,model_year,int64,3,0,0.0,2
+nhtsa_clean,mileage,int64,3,0,0.0,3
+nhtsa_clean,roadway_type,object,3,0,0.0,1
+nhtsa_clean,roadway_surface,object,3,0,0.0,1
+nhtsa_clean,lighting,object,3,0,0.0,2
+nhtsa_clean,crash_with,object,3,0,0.0,2
+nhtsa_clean,highest_injury_severity_alleged,object,3,0,0.0,1
+nhtsa_clean,severity_category,object,3,0,0.0,1
+nhtsa_clean,property_damage,object,3,0,0.0,1
+nhtsa_clean,sv_pre_crash_movement,object,3,0,0.0,2
+nhtsa_clean,sv_precrash_speed_mph,int64,3,0,0.0,1
+nhtsa_clean,within_odd,object,3,0,0.0,1
+nhtsa_clean,source_id,object,3,0,0.0,1
+nhtsa_clean,record_hash,object,3,0,0.0,3

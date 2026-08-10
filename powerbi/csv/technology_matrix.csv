@@ -1,0 +1,31 @@
+company_id,technology_id,relationship_type,company_name,technology_name,technology_category,comparability_warning
+1,1,Primary,Tesla,Camera perception,Sensor,"Not equivalent across camera count, placement, resolution, or software"
+1,4,Primary,Tesla,Fleet learning,Data workflow,Triggering and retention rules are private
+1,6,Primary,Tesla,In-vehicle AI compute,Compute,TOPS is not directly comparable across precision and architecture
+1,8,Primary,Tesla,Cloud training platform,Training,Internal cluster size and spend are undisclosed
+1,9,Primary,Tesla,Safety case and validation,Safety,Evidence scope and release criteria differ
+2,1,Primary,Waymo,Camera perception,Sensor,"Not equivalent across camera count, placement, resolution, or software"
+2,2,Primary,Waymo,Lidar perception,Sensor,"Range, wavelength, placement, and fusion differ"
+2,3,Primary,Waymo,Radar perception,Sensor,Specifications and processing differ
+2,4,Primary,Waymo,Fleet learning,Data workflow,Triggering and retention rules are private
+2,5,Primary,Waymo,Closed-loop simulation,Simulation,Simulation validity and coverage are private
+2,6,Primary,Waymo,In-vehicle AI compute,Compute,TOPS is not directly comparable across precision and architecture
+2,7,Primary,Waymo,HD mapping / road model,Localization,Map dependence and update cadence differ
+2,8,Primary,Waymo,Cloud training platform,Training,Internal cluster size and spend are undisclosed
+2,9,Primary,Waymo,Safety case and validation,Safety,Evidence scope and release criteria differ
+3,2,Reference option,NVIDIA,Lidar perception,Sensor,"Range, wavelength, placement, and fusion differ"
+3,3,Reference option,NVIDIA,Radar perception,Sensor,Specifications and processing differ
+3,5,Primary,NVIDIA,Closed-loop simulation,Simulation,Simulation validity and coverage are private
+3,6,Primary,NVIDIA,In-vehicle AI compute,Compute,TOPS is not directly comparable across precision and architecture
+3,8,Primary,NVIDIA,Cloud training platform,Training,Internal cluster size and spend are undisclosed
+3,9,Primary,NVIDIA,Safety case and validation,Safety,Evidence scope and release criteria differ
+3,10,Primary,NVIDIA,OEM integration platform,Commercial,Program announcements do not equal deployed volume
+4,1,Primary,Mobileye,Camera perception,Sensor,"Not equivalent across camera count, placement, resolution, or software"
+4,2,Higher-tier option,Mobileye,Lidar perception,Sensor,"Range, wavelength, placement, and fusion differ"
+4,3,Higher-tier option,Mobileye,Radar perception,Sensor,Specifications and processing differ
+4,4,Primary,Mobileye,Fleet learning,Data workflow,Triggering and retention rules are private
+4,6,Primary,Mobileye,In-vehicle AI compute,Compute,TOPS is not directly comparable across precision and architecture
+4,7,Primary,Mobileye,HD mapping / road model,Localization,Map dependence and update cadence differ
+4,8,Primary,Mobileye,Cloud training platform,Training,Internal cluster size and spend are undisclosed
+4,9,Primary,Mobileye,Safety case and validation,Safety,Evidence scope and release criteria differ
+4,10,Primary,Mobileye,OEM integration platform,Commercial,Program announcements do not equal deployed volume

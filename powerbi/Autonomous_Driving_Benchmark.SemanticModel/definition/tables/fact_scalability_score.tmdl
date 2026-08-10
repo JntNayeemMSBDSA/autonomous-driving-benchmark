@@ -1,0 +1,56 @@
+table fact_scalability_score
+
+	column score_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: score_id
+
+	column company_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: company_id
+
+	column criterion_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: criterion_id
+
+	column score_1_5
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: score_1_5
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column evidence_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: evidence_note
+
+	column missing_data_treatment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: missing_data_treatment
+
+	partition fact_scalability_score = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="FactScalability",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"score_id", Int64.Type}, {"company_id", Int64.Type}, {"criterion_id", Int64.Type}, {"score_1_5", Int64.Type}, {"source_id", type text}, {"evidence_note", type text}, {"missing_data_treatment", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

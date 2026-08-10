@@ -1,0 +1,131 @@
+path,category,size_bytes,sha256,description
+MANIFEST.csv,root_documentation,,SELF_REFERENCE_NOT_APPLICABLE,Manifest of every project file. Its own hash is omitted because a manifest cannot contain a stable hash of itself.
+README.md,root_documentation,12381,1068cff5e6fa828421964c34f1b297fd553948303fe63a7bbe96debdf13b471c,"Project overview, architecture, findings, reproduction steps, ethics, and limitations."
+assumptions_and_limitations.xlsx,root_documentation,9373,2fed78442c524c638ac7a0cc1246f1642e847a7860df7988ea2a3c2db435b59a,Structured scenario assumptions and public-data limitation register.
+data/cleaned/bridge_company_technology.csv,data,445,929a022afee900c3f1913aaa55b42abe5761638c9d90d5426205dfc7749eec36,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/dim_company.csv,data,1670,eb04c28d859693c3b44e4e475c06e2aca8e88ede2da41c9459649ae8e24691c7,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/dim_date.csv,data,82639,25a60e7d7af07a5403f95a43d48db5dc8df726f8d5a9d9ee57cb57bc22638ba2,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/dim_geography.csv,data,528,3f8e7f99dbcdfdd2f432a435d829c855800a9bca84d4f6245e57f4347c976475,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/dim_source.csv,data,14022,a37194067d9adf2a236fe4b5a5243869d1948f52299b0fb2d186d51738f6e67a,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/dim_technology.csv,data,1644,8033e7c16b607826204d099c356b717b0992803f6c85d2e7e09ec6978dd94d8d,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_av_incident.csv,data,1091,dd3b2eaf4d01a9aeb5f7a616a1b2d6e9e781d7aac9394c767770ebfb5979d089,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_av_incident_summary.csv,data,1308,e2cfb570b735e623132dd4a22ae6158b614ba6dcf51b9b5c5990219d6b575331,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_company_capability.csv,data,3426,be5bc67f38d34b91ef0c543d83faeaf1f5dc720ecba940507a9384611577159f,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_deployment_mileage.csv,data,2111,69b3bb5fc315bc5eb12f90d9fbe55540258809e59916e963f874ee666ba5f15b,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_disengagement.csv,data,444,d8e7c599cf94b5682f7232a05af5c596f5326458f810adc5d05bacd150be48bc,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_gpu_pricing.csv,data,1240,630b6116f9691aedf4a1810fbc506dcfc6daa8c1e7d773ddd09d7da0df4af875,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_partnership.csv,data,671,d07aa47f4cc39a1d2b6668d311a09156c84c7b0b194a52bbc8eebfad6034967f,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_scalability_score.csv,data,9117,a5af0e2b7f82b58487aae3ea1e972c183313d1b53a2b045e394e8139c54fb6ce,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/cleaned/fact_training_cost_scenario.csv,data,14551,9ac1f5f9f6ebfd2310c405fc3c6329f12e34e57e02bd13a2cc2b0174f08360e3,"Canonical cleaned dimension, fact, bridge, or supporting analytical table."
+data/data_quality/final_artifact_validation.csv,data,8705,a1324d4b30fe2965da74edb96932b0557f86f05979481a4cab8517936089b787,Final file-opening and integrity validation across project artifacts.
+data/data_quality/missing_value_profile.csv,data,7163,9fec91676896726e27fc45d212f8d5e42231d3229d2f3edb63e9512241c3ac8a,"Automated validation, reconciliation, or missing-value output."
+data/data_quality/pipeline_validation.csv,data,598,b81daccbe9419175eed63092e3adc04d14f7337a69839d1aac68980d44afc987,"Automated validation, reconciliation, or missing-value output."
+data/data_quality/pipeline_validation.json,data,1276,166c1246e0a0b80be73a8b8539786706062af7f8f524fbcd87fb6bed86607a3b,"Automated validation, reconciliation, or missing-value output."
+data/data_quality/qa_validation_result.csv,data,2800,368c1f6adcd15d949daf5962421d8821f3324d31a6d1ff93d5e00ff062deb186,"Automated validation, reconciliation, or missing-value output."
+data/data_quality/record_count_reconciliation.csv,data,433,91e5e94a0a0cdd33b46ff22a4fd31673077b0d344e99bd2ecd56a4222859ebad,"Automated validation, reconciliation, or missing-value output."
+data/manually_compiled/assumptions.csv,data,2191,672d1d73ab3e469fa117a0a7669515d116fdb6d910d8b1bec269d1d82c9a4cf3,"Manually compiled, source-linked analytical input."
+data/manually_compiled/data_dictionary.csv,data,16864,ca4185b670ceeaf9fd6bef83a027b05de038d5441b9539324d44c070c8af89d9,"Manually compiled, source-linked analytical input."
+data/manually_compiled/gpu_scenarios.csv,data,469,ba5c13df491da7f70720fd195dbc2eb50489310c62a5a47ff6f2e2233305db39,"Manually compiled, source-linked analytical input."
+data/manually_compiled/limitations.csv,data,2714,d9febf11ec45de3504734235bd8d03299831e2b52719aa963995cf44dc1f470f,"Manually compiled, source-linked analytical input."
+data/manually_compiled/pricing_models.csv,data,243,94472a62a4693b0e568410919c53b6c6f873cc780b35ef15c9963fd84c8da5b4,"Manually compiled, source-linked analytical input."
+data/manually_compiled/scalability_criteria.csv,data,1689,6f658d60612746fc04bbcf16df24f69e67a36d241ed692e4b685bc40c4d30758,"Manually compiled, source-linked analytical input."
+data/manually_compiled/source_log.csv,data,13941,2593210fb2e7cc7966341337a42e7b5e345f803d7ef2d30fbc46e0659b5d19ee,"Manually compiled, source-linked analytical input."
+data/raw/README.md,data,510,02ef7ef2d0f10257209f61acb08a1aa4e81814004b7d8c906b723047d4472e0e,"Raw source evidence, acquisition metadata, or redistribution note with original field names preserved."
+data/raw/acquisition_log.json,data,905,8efb229f8e6457aee2ccf1fd1d5ff33cc72ccf1d335e813aa1dea245838e8f21,"Raw source evidence, acquisition metadata, or redistribution note with original field names preserved."
+data/raw/nhtsa_ads_curated_schema_excerpt.csv,data,1157,4ddcda192a1fcb028a867a7326d3cd16a8644f8546ffc2fb91f447ba82c5cc61,"Raw source evidence, acquisition metadata, or redistribution note with original field names preserved."
+data/reporting/company_benchmark.csv,data,1703,c23e377bbdf4f32900060d14f5711b7c6f67e611eb5b061e9dcc17516ced03a5,Denormalized reporting table for analysis and dashboard use.
+data/reporting/deployment_metrics.csv,data,2577,3d3e938467979d7b834c42243c04238cf50540f54f1dabc88abcadb1d309c1ed,Denormalized reporting table for analysis and dashboard use.
+data/reporting/executive_kpis.csv,data,674,c4d64b17224efdc90a9c465a9fee3a4b0c988c882f4836c9c673a7ad3baf7abd,Denormalized reporting table for analysis and dashboard use.
+data/reporting/findings_summary.csv,data,2321,051759750c9a0da871b66f369451cddb9c76cb92b5b120018fa0d19c6125b5e5,Denormalized reporting table for analysis and dashboard use.
+data/reporting/gpu_cost_sensitivity.csv,data,10855,4937de0520b5bee326805b4c9ed339803e6eb205900a3d1fffec82bc08e50e27,Denormalized reporting table for analysis and dashboard use.
+data/reporting/incident_summary.csv,data,494,9dd78269a6a14e678511ff36e8b3e64238e03fbdc0cb30e29184c2e5ee3f5884,Denormalized reporting table for analysis and dashboard use.
+data/reporting/safety_indicators.csv,data,1367,22272ee955fa4cc3573c1c55c1ff3eeb362594356f48b2fefe1a5ebd3b8f89c9,Denormalized reporting table for analysis and dashboard use.
+data/reporting/scalability_score_detail.csv,data,16274,95f04e09b0ffa5903a28a6ff18da64f1f6b3a549adf62cca2f55f416489d1899,Denormalized reporting table for analysis and dashboard use.
+data/reporting/scalability_weighted_scores.csv,data,586,6e26a8e277b9f53280ee5c21304082c773d45198664ec42ab2a6d72458c45fed,Denormalized reporting table for analysis and dashboard use.
+data/reporting/technology_matrix.csv,data,3149,06b3bf8985eb962686e52ed3207d58d31a56dc33ba0c05880e5ef5c1c35c2e25,Denormalized reporting table for analysis and dashboard use.
+data/staging/nhtsa_incidents_standardized.csv,data,1632,9be985c09d209f340d83ada88dbdb7894536b0a7fca6ee385343e06df44897b3,Standardized staging table before final analytical selection.
+data_dictionary.xlsx,root_documentation,14495,01ec067e54c3a5a1c3aebf21a03d0f40f71c7a8416a9343ca87b8961b01ff73a,Field-level definitions for the analytical model.
+documentation/known_limitations.md,documentation,3376,1993528c0193cc43caa3ab2aa9dffad54bb477d11bd9dd0858c4bf6a7ca9b2ea,"Supporting methodology, source, transformation, reproducibility, or limitation documentation."
+documentation/reproducibility_guide.md,documentation,1498,e1e00cf1837aef478efe63e065cd33ced39d8d4becd57c7a2b9cb12994d300da,"Supporting methodology, source, transformation, reproducibility, or limitation documentation."
+documentation/source_notes.md,documentation,1698,78d319dbe4fb782f172ee1cb693bdfc6de34dc38f259347d0624906638cfbd6f,"Supporting methodology, source, transformation, reproducibility, or limitation documentation."
+documentation/transformation_log.md,documentation,1780,535ff97e5da7fa56593f2d1e8ed7e3ec36b41b74ca59b18f66824d6e09ffcc85,"Supporting methodology, source, transformation, reproducibility, or limitation documentation."
+executive_summary.pdf,root_documentation,452992,72adc71417f191412e8e05405eef57b11af66c73daab304b1d6624ad35cc74aa,Condensed executive findings and decision implications.
+interview_guide.docx,root_documentation,45616,ee897f4858c7c439b0a363cb18c279d1518db44a2607c65ce9786c8cc41b8e28,"Interview summaries, technical explanations, challenges, and honest project framing."
+methodology.md,root_documentation,6239,5911ded7192dbe9c34c0cccbb45d74c15cd1737b68bcad7d7466217728a7bb81,"Comparability, cost-model, scalability, and evidence-strength methodology."
+notebooks/01_data_acquisition_and_audit.ipynb,notebooks,11479,b397faf98354e8412451408afbdcd399542b3f2d6351c269a565024e2e6fc869,Executed analytical notebook with stored outputs and no execution errors.
+notebooks/02_safety_and_deployment_analysis.ipynb,notebooks,48428,ce9738414bcd923df23386027e86e980feada0a635dcd60b3524b0ecdba54ee2,Executed analytical notebook with stored outputs and no execution errors.
+notebooks/03_gpu_cost_scenarios.ipynb,notebooks,67462,30e42bc82682171b41ec5c27de50bb7bddc70eea0366b0e082ee49b3ce9246db,Executed analytical notebook with stored outputs and no execution errors.
+notebooks/04_scalability_analysis.ipynb,notebooks,52342,0b8bab34e8ea02a5c84bb314b7ea936ed8f9145cc4df90b023cfeebc0212258f,Executed analytical notebook with stored outputs and no execution errors.
+outputs/charts/01_ecosystem_role_map.png,outputs,94809,c9d6df397b1d1da8f56c9497bf739e289728563907fb4e2e39dc39852e974bd3,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/02_capability_evidence_heatmap.png,outputs,58141,5def8c955e3a0fa2326005e761e871301a7798e794dbc03b7c92b8a8d340789f,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/03_deployment_distribution_snapshot.png,outputs,69747,550b7d077c619f0d6a0832efffd3a422e9aa1efaa996c2b487b0f5bc0d9f8e2e,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/04_california_testing_miles.png,outputs,45541,63d2b541a9873cbe33d887fa190bdc78a456b58bc5dd50aaf69a3563a8ecbabe,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/05_waymo_safety_matched_benchmark.png,outputs,61640,70538b9dd7aa8e986c7d97403946a7ff94978c23be6caaaab5c7d1e501433f11,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/06_gpu_scenario_costs.png,outputs,103140,e6ed10d56bff08d6138ff79aa65cd82641886cf37b9a7974a228f2f5877fe23f,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/07_gpu_cost_composition.png,outputs,62963,2cd39c74d9cb78c892057aac2e5a0495c35c81121836a1383cec00aa9a7e05dd,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/08_gpu_cost_sensitivity.png,outputs,54333,c5213a058aabc533bdbbe64333dbf4d94c10dded19f1656c577019b5ba275fcd,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/09_scalability_weight_sensitivity.png,outputs,59515,ff74c9109e55ac2fddd1cd8a71f0056f9d1f1037f8771150f4ba5fc31df1f02c,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/10_scalability_criteria_profile.png,outputs,87558,d5745ed6a0d1d808acd53d0dcfb85911f56b8b416814dcb817a160ae095c5402,Portfolio visualization generated for the report and dashboard design.
+outputs/charts/11_entity_relationship_diagram.png,outputs,196521,73d7a2e9bf13dd091583e63d645fe7be6be3f506bf3262192c7eb9532e0be9e3,Portfolio visualization generated for the report and dashboard design.
+outputs/findings_summary.xlsx,outputs,10355,2952d0bff8c24c1e9649892655163b0bac7f84b4f6c8db0dad3481915300aa23,"Structured verified findings, scenarios, inferences, and unsupported questions."
+outputs/quality_report.xlsx,outputs,15893,9704be6d650179bddcd24a897d874b9abdf5242a16eb16606fd7fb6b54b67cc4,Twenty-check project data-quality report.
+outputs/tables/company_capability_summary.csv,outputs,235,16c48e04588c73c5a45bc7f348ba516ac9016497436241b0a3b96ba0cc086624,Compact analytical output table.
+outputs/tables/latest_deployment.csv,outputs,1302,8a50ff88020f0d555d1b94a6a5fc35a4503dfc2b4de582c78ab774db71b72db7,Compact analytical output table.
+outputs/tables/lowest_scenario_cost.csv,outputs,932,ccf03ed955cb4c8ee54be72ac0251106298f7fbf3871ccc74b01398182817e72,Compact analytical output table.
+outputs/tables/qa_validation_result.csv,outputs,2800,368c1f6adcd15d949daf5962421d8821f3324d31a6d1ff93d5e00ff062deb186,Compact analytical output table.
+powerbi/csv/bridge_company_technology.csv,powerbi,445,929a022afee900c3f1913aaa55b42abe5761638c9d90d5426205dfc7749eec36,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/company_benchmark.csv,powerbi,1703,c23e377bbdf4f32900060d14f5711b7c6f67e611eb5b061e9dcc17516ced03a5,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/deployment_metrics.csv,powerbi,2577,3d3e938467979d7b834c42243c04238cf50540f54f1dabc88abcadb1d309c1ed,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/dim_company.csv,powerbi,1670,eb04c28d859693c3b44e4e475c06e2aca8e88ede2da41c9459649ae8e24691c7,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/dim_date.csv,powerbi,82639,25a60e7d7af07a5403f95a43d48db5dc8df726f8d5a9d9ee57cb57bc22638ba2,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/dim_geography.csv,powerbi,528,3f8e7f99dbcdfdd2f432a435d829c855800a9bca84d4f6245e57f4347c976475,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/dim_source.csv,powerbi,14022,a37194067d9adf2a236fe4b5a5243869d1948f52299b0fb2d186d51738f6e67a,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/dim_technology.csv,powerbi,1644,8033e7c16b607826204d099c356b717b0992803f6c85d2e7e09ec6978dd94d8d,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/executive_kpis.csv,powerbi,674,c4d64b17224efdc90a9c465a9fee3a4b0c988c882f4836c9c673a7ad3baf7abd,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_av_incident.csv,powerbi,1091,dd3b2eaf4d01a9aeb5f7a616a1b2d6e9e781d7aac9394c767770ebfb5979d089,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_company_capability.csv,powerbi,3426,be5bc67f38d34b91ef0c543d83faeaf1f5dc720ecba940507a9384611577159f,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_deployment_mileage.csv,powerbi,2111,69b3bb5fc315bc5eb12f90d9fbe55540258809e59916e963f874ee666ba5f15b,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_disengagement.csv,powerbi,444,d8e7c599cf94b5682f7232a05af5c596f5326458f810adc5d05bacd150be48bc,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_gpu_pricing.csv,powerbi,1240,630b6116f9691aedf4a1810fbc506dcfc6daa8c1e7d773ddd09d7da0df4af875,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_partnership.csv,powerbi,671,d07aa47f4cc39a1d2b6668d311a09156c84c7b0b194a52bbc8eebfad6034967f,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_scalability_score.csv,powerbi,9117,a5af0e2b7f82b58487aae3ea1e972c183313d1b53a2b045e394e8139c54fb6ce,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/fact_training_cost_scenario.csv,powerbi,14551,9ac1f5f9f6ebfd2310c405fc3c6329f12e34e57e02bd13a2cc2b0174f08360e3,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/findings_summary.csv,powerbi,2321,051759750c9a0da871b66f369451cddb9c76cb92b5b120018fa0d19c6125b5e5,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/gpu_cost_sensitivity.csv,powerbi,10855,4937de0520b5bee326805b4c9ed339803e6eb205900a3d1fffec82bc08e50e27,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/incident_summary.csv,powerbi,494,9dd78269a6a14e678511ff36e8b3e64238e03fbdc0cb30e29184c2e5ee3f5884,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/safety_indicators.csv,powerbi,1367,22272ee955fa4cc3573c1c55c1ff3eeb362594356f48b2fefe1a5ebd3b8f89c9,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/scalability_score_detail.csv,powerbi,16274,95f04e09b0ffa5903a28a6ff18da64f1f6b3a549adf62cca2f55f416489d1899,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/scalability_weighted_scores.csv,powerbi,586,6e26a8e277b9f53280ee5c21304082c773d45198664ec42ab2a6d72458c45fed,Power BI-ready CSV table exported from the canonical model.
+powerbi/csv/technology_matrix.csv,powerbi,3149,06b3bf8985eb962686e52ed3207d58d31a56dc33ba0c05880e5ef5c1c35c2e25,Power BI-ready CSV table exported from the canonical model.
+powerbi/dashboard_build_guide.docx,powerbi,490878,22a3e18490cdf4fb68a532e1f3ab9cf16f8152ed1c15804c2d4e9e8d9afb2301,Detailed build instructions for four Power BI report pages.
+powerbi/data_model_specification.md,powerbi,5285,ecf8206f0e96219fd8162feffd20b268cfd19e03b89abef0191d80e39e3811e2,"Power BI data model, DAX, build guidance, or workbook artifact."
+powerbi/dax_measures.txt,powerbi,4388,9009b50c9210debbbc28fc778f141fe73471e05b51132362912d4bb7b9327fe6,"Power BI data model, DAX, build guidance, or workbook artifact."
+powerbi/mockups/report_1_executive_benchmark_mockup.png,powerbi,87397,810c076a85baae48b01455fc4ac9ca7de537bc9c70f4c7b9b3d7115c4abd9dc8,Dashboard page mockup image.
+powerbi/mockups/report_2_adas_workflow_mockup.png,powerbi,83703,b513eede4aa91df001c669a976b6408eaf2de2a9b2b457da2f577714580773d9,Dashboard page mockup image.
+powerbi/mockups/report_3_safety_deployment_mockup.png,powerbi,84305,19e8ef280f2292c2dcbb43429e17d2a559104d99408a4d844dbd5ef66746d66c,Dashboard page mockup image.
+powerbi/mockups/report_4_gpu_scalability_mockup.png,powerbi,88433,3e0fb9400251eb24c17020280f9f007b0925f6e2fc5ae49f2359b59dd12e7551,Dashboard page mockup image.
+powerbi/powerbi_ready_data.xlsx,powerbi,126766,fcd094bc5a6cd052bddd9be6ab29a298e575840d3c87129c288f42b4ef4a4c79,Power BI-ready workbook with model tables and scenario calculator.
+project_report.docx,root_documentation,781829,4f46451b16cc8b556c63fecaabecf6a4e47c26694c13037cefa36dcac3452d0a,Full analytical report in editable Word format.
+project_report.pdf,root_documentation,1238904,1d9307816ac4d43ebd48b9080e0a386dae2008f858d1c473c322225e342fad4d,Full analytical report in PDF format.
+python/acquire_data.py,python,3112,acb90e280cbe57a66b28c14242b141540908d0917f1bf064c5b6d506feeaf088,Reproducible Python pipeline component using project-relative paths.
+python/analyze_deployment.py,python,983,e53db494e219ed5e84a8ea35577c32d50eebcd6b2f766659c25a9580ab6fb478,Reproducible Python pipeline component using project-relative paths.
+python/analyze_incidents.py,python,873,6a3c01c05749550e24f659a9295f64abfb2bd6315f4f7b4e6b348dc37d717784,Reproducible Python pipeline component using project-relative paths.
+python/build_database.py,python,3950,2808301da6069bb85938b05fea52695aa29932315a40bfd2f6343c09ce95e98f,Reproducible Python pipeline component using project-relative paths.
+python/clean_data.py,python,6390,f0050c82c69225f60326a34a5894a5f1c289df923c50d734d7e7995b281554d1,Reproducible Python pipeline component using project-relative paths.
+python/config.py,python,908,39b1a9228d4342fb927889d748e012d2ade4d3fccea1d71a04c2406f5b011a30,Reproducible Python pipeline component using project-relative paths.
+python/export_powerbi_tables.py,python,1011,40a68627d29477827d2b779a2cbf3583833cefe25084ebf9f713037439f20e98,Reproducible Python pipeline component using project-relative paths.
+python/gpu_cost_model.py,python,3067,937347abed8ee65d870cac95d4ed0f7509c0e557787dec71ed844a5f9f11359d,Reproducible Python pipeline component using project-relative paths.
+python/run_pipeline.py,python,1069,8491127a936d44350eae483500516bfb74f45ad6cd862d41d11c5ba294d7e39f,Reproducible Python pipeline component using project-relative paths.
+python/scalability_model.py,python,1488,38e865d92bf801dfc1ca62868d7272e9db6414579f68a9787add2b18d2ec1adb,Reproducible Python pipeline component using project-relative paths.
+python/validate_data.py,python,2956,db0baf28928bdaf9ed09a438c683e5eecacfda0d0c2d8f15f9847c9d4deaff41,Reproducible Python pipeline component using project-relative paths.
+requirements.txt,root_documentation,83,2a947edd5a4927a1f973a2d8e2caf024099f350a0bbf3cf03bb08061850e762e,Project artifact: requirements.txt.
+resume_bullets.txt,root_documentation,3086,b8c925ed02261fe073e5efa9c65694807365c58b9742696345540b30137c86d3,"Role-specific resume bullets, LinkedIn copy, and portfolio description."
+source_log.xlsx,root_documentation,13432,e45934a1ec06fd7f705b9f0759ea0b78a8e7be75b9f7d464e1250dcbd1f80caf,"Traceable source register with publication dates, claims, reliability, and limitations."
+sql/01_create_schema.sql,sql,8463,8a850ee68b6ab785783c2c8d4ccd268cd6ba16fbcc56269e9bc7b42008fc0a39,"SQL schema, load, transformation, validation, analytical, reporting, or database artifact."
+sql/02_load_data.sql,sql,1337,e181ce383dc0d41f5d18d4c7e0bf29c0d9109a6c754f78da846998951604cebc,"SQL schema, load, transformation, validation, analytical, reporting, or database artifact."
+sql/03_clean_transform.sql,sql,1452,be540909fc8a80eea664501af99f21ffcd59cfa218309d33bd47741d85aada80,"SQL schema, load, transformation, validation, analytical, reporting, or database artifact."
+sql/04_validation_checks.sql,sql,2095,aab3a174652fd6aef4de324a29e194e897b9659f90e8d230bb4d8ec704216345,"SQL schema, load, transformation, validation, analytical, reporting, or database artifact."
+sql/05_analytical_queries.sql,sql,2742,763479b6fc159575953fc587e966c278abde641865ab02c88d4dd9e158fa5baf,"SQL schema, load, transformation, validation, analytical, reporting, or database artifact."
+sql/06_reporting_views.sql,sql,1910,9227a509080a2855de1e35ede74f3d6a5ce33fda79de0cbcb765a10484c5b615,"SQL schema, load, transformation, validation, analytical, reporting, or database artifact."
+sql/07_sqlserver_compatible_schema.sql,sql,12423,f7cdc09113449088dd4f33df697f350b1720294c68704a1829e4f42c80ab2120,"SQL schema, load, transformation, validation, analytical, reporting, or database artifact."
+sql/autonomous_driving.db,sql,278528,9945b33b999b2dc2a309e55ce2f977ee82125e0468f0aec78a51d1064de1e356,Executed and validated SQLite analytical database.

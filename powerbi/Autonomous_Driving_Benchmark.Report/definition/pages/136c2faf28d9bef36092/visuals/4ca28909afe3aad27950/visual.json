@@ -1,0 +1,109 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "4ca28909afe3aad27950",
+  "position": {
+    "x": 620,
+    "y": 470,
+    "z": 0,
+    "height": 218,
+    "width": 636,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_safety_indicator"
+                    }
+                  },
+                  "Property": "indicator_name"
+                }
+              },
+              "queryRef": "fact_safety_indicator.indicator_name",
+              "nativeQueryRef": "indicator_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_safety_indicator"
+                    }
+                  },
+                  "Property": "exposure_basis"
+                }
+              },
+              "queryRef": "fact_safety_indicator.exposure_basis",
+              "nativeQueryRef": "exposure_basis"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_safety_indicator"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "fact_safety_indicator.status",
+              "nativeQueryRef": "status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_safety_indicator"
+                    }
+                  },
+                  "Property": "limitation"
+                }
+              },
+              "queryRef": "fact_safety_indicator.limitation",
+              "nativeQueryRef": "limitation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_safety_indicator"
+                    }
+                  },
+                  "Property": "source_id"
+                }
+              },
+              "queryRef": "fact_safety_indicator.source_id",
+              "nativeQueryRef": "source_id"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Safety Evidence Limitations'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

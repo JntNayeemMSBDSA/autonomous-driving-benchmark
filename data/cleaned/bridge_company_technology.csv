@@ -1,0 +1,31 @@
+company_id,technology_id,relationship_type
+1,1,Primary
+1,4,Primary
+1,6,Primary
+1,8,Primary
+1,9,Primary
+2,1,Primary
+2,2,Primary
+2,3,Primary
+2,4,Primary
+2,5,Primary
+2,6,Primary
+2,7,Primary
+2,8,Primary
+2,9,Primary
+3,2,Reference option
+3,3,Reference option
+3,5,Primary
+3,6,Primary
+3,8,Primary
+3,9,Primary
+3,10,Primary
+4,1,Primary
+4,2,Higher-tier option
+4,3,Higher-tier option
+4,4,Primary
+4,6,Primary
+4,7,Primary
+4,8,Primary
+4,9,Primary
+4,10,Primary

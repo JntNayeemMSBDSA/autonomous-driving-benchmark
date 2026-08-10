@@ -1,0 +1,4 @@
+discount_model,price_factor,description
+On-demand,1.0,Published/snapshot retail rate
+Committed scenario,0.7,"Standardized 30% reduction, not a provider quote"
+Interruptible scenario,0.45,"Standardized 55% reduction, assumes restart tolerance"

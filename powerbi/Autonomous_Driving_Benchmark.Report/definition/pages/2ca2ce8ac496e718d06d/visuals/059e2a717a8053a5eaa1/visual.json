@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "059e2a717a8053a5eaa1",
+  "position": {
+    "x": 896,
+    "y": 258,
+    "z": 0,
+    "height": 194,
+    "width": 360,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_cost_sensitivity"
+                    }
+                  },
+                  "Property": "parameter_value"
+                }
+              },
+              "queryRef": "fact_cost_sensitivity.parameter_value",
+              "nativeQueryRef": "parameter_value",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_cost_sensitivity"
+                    }
+                  },
+                  "Property": "variable"
+                }
+              },
+              "queryRef": "fact_cost_sensitivity.variable",
+              "nativeQueryRef": "variable"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_company"
+                    }
+                  },
+                  "Property": "Sensitivity Change From Baseline"
+                }
+              },
+              "queryRef": "dim_company.Sensitivity Change From Baseline",
+              "nativeQueryRef": "Sensitivity Change From Baseline"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sensitivity to Scenario Inputs'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,80 @@
+table fact_deployment_mileage
+
+	column deployment_metric_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: deployment_metric_id
+
+	column company_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: company_id
+
+	column metric_date
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: metric_date
+
+	column metric_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: metric_name
+
+	column unit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: unit
+
+	column metric_value
+		dataType: int64
+		formatString: 0
+		summarizeBy: sum
+		sourceColumn: metric_value
+
+	column period_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: period_type
+
+	column geography
+		dataType: string
+		summarizeBy: none
+		sourceColumn: geography
+
+	column reporting_method
+		dataType: string
+		summarizeBy: none
+		sourceColumn: reporting_method
+
+	column source_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_id
+
+	column historical_cutoff_valid
+		dataType: string
+		summarizeBy: none
+		sourceColumn: historical_cutoff_valid
+
+	column limitation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: limitation
+
+	partition fact_deployment_mileage = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="FactDeployment",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"deployment_metric_id", Int64.Type}, {"company_id", Int64.Type}, {"metric_date", type date}, {"metric_name", type text}, {"unit", type text}, {"metric_value", Int64.Type}, {"period_type", type text}, {"geography", type text}, {"reporting_method", type text}, {"source_id", type text}, {"historical_cutoff_valid", type text}, {"limitation", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

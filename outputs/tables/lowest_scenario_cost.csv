@@ -1,0 +1,10 @@
+scenario_name,discount_model,cloud_provider,instance_type,total_cost_usd,rn
+Large AV training,Committed scenario,Microsoft Azure,Standard_NC24ads_A100_v4,2012475.5764705883,1
+Large AV training,Interruptible scenario,Microsoft Azure,Standard_NC24ads_A100_v4,1307662.8705882356,1
+Large AV training,On-demand,Microsoft Azure,Standard_NC24ads_A100_v4,2858250.823529412,1
+Medium development,Committed scenario,Microsoft Azure,Standard_NC24ads_A100_v4,77446.69999999998,1
+Medium development,Interruptible scenario,Microsoft Azure,Standard_NC24ads_A100_v4,50563.95,1
+Medium development,On-demand,Microsoft Azure,Standard_NC24ads_A100_v4,109706.0,1
+Small experimentation,Committed scenario,Microsoft Azure,Standard_NC24ads_A100_v4,881.15,1
+Small experimentation,Interruptible scenario,Microsoft Azure,Standard_NC24ads_A100_v4,592.7928571428572,1
+Small experimentation,On-demand,Microsoft Azure,Standard_NC24ads_A100_v4,1227.1785714285716,1

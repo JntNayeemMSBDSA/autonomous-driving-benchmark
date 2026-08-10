@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "016bc4722c5d8e448982",
+  "position": {
+    "x": 24,
+    "y": 470,
+    "z": 0,
+    "height": 218,
+    "width": 580,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_av_incident"
+                    }
+                  },
+                  "Property": "report_id"
+                }
+              },
+              "queryRef": "fact_av_incident.report_id",
+              "nativeQueryRef": "report_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_av_incident"
+                    }
+                  },
+                  "Property": "report_type"
+                }
+              },
+              "queryRef": "fact_av_incident.report_type",
+              "nativeQueryRef": "report_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_av_incident"
+                    }
+                  },
+                  "Property": "incident_month"
+                }
+              },
+              "queryRef": "fact_av_incident.incident_month",
+              "nativeQueryRef": "incident_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_av_incident"
+                    }
+                  },
+                  "Property": "state"
+                }
+              },
+              "queryRef": "fact_av_incident.state",
+              "nativeQueryRef": "state"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_av_incident"
+                    }
+                  },
+                  "Property": "severity_category"
+                }
+              },
+              "queryRef": "fact_av_incident.severity_category",
+              "nativeQueryRef": "severity_category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_av_incident"
+                    }
+                  },
+                  "Property": "source_id"
+                }
+              },
+              "queryRef": "fact_av_incident.source_id",
+              "nativeQueryRef": "source_id"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NHTSA Evidence Extract | Three Delivered Rows'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

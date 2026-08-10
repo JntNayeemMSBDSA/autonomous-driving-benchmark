@@ -1,0 +1,82 @@
+sensitivity_id,scenario_id,scenario_name,cloud_provider,instance_type,variable,parameter_value,total_cost_usd,baseline_total_cost_usd,change_from_baseline_pct
+1,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,0.5,912.6071428571429,1227.1785714285716,-25.633712639329474
+2,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,0.75,1069.8928571428573,1227.1785714285716,-12.816856319664726
+3,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.0,1227.1785714285716,1227.1785714285716,0.0
+4,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.25,1384.4642857142858,1227.1785714285716,12.816856319664737
+5,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.5,1541.75,1227.1785714285716,25.633712639329453
+6,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,2.0,1856.3214285714284,1227.1785714285716,51.267425278658926
+7,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,0.5,912.6071428571429,1227.1785714285716,-25.633712639329474
+8,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,0.75,1069.8928571428573,1227.1785714285716,-12.816856319664726
+9,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.0,1227.1785714285716,1227.1785714285716,0.0
+10,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.25,1384.4642857142858,1227.1785714285716,12.816856319664737
+11,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.5,1541.75,1227.1785714285716,25.633712639329453
+12,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,2.0,1856.3214285714284,1227.1785714285716,51.267425278658926
+13,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,0.5,1215.6785714285716,1227.1785714285716,-0.9371089316376091
+14,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,1.0,1227.1785714285716,1227.1785714285716,0.0
+15,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,1.5,1238.6785714285716,1227.1785714285716,0.9371089316376091
+16,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,2.0,1250.1785714285716,1227.1785714285716,1.8742178632752182
+17,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.5,1688.55,1227.1785714285716,37.59611187101655
+18,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.65,1315.9038461538462,1227.1785714285716,7.2300215136570145
+19,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.8,1083.0,1227.1785714285716,-11.748784959692681
+20,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.95,923.6447368421052,1227.1785714285716,-24.734284125668804
+21,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,0.45,592.7928571428572,1227.1785714285716,-51.69465382264777
+22,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,0.7,881.15,1227.1785714285716,-28.19708390326243
+23,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,1.0,1227.1785714285716,1227.1785714285716,0.0
+24,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,0.0,1182.1785714285716,1227.1785714285716,-3.6669479933645666
+25,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,45.0,1204.6785714285716,1227.1785714285716,-1.8334739966822888
+26,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,90.0,1227.1785714285716,1227.1785714285716,0.0
+27,1,Small experimentation,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,180.0,1272.1785714285716,1227.1785714285716,3.6669479933645777
+28,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,0.5,78878.0,109706.0,-28.10055967768399
+29,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,0.75,94292.0,109706.0,-14.050279838841995
+30,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.0,109706.0,109706.0,0.0
+31,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.25,125119.99999999999,109706.0,14.050279838841973
+32,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.5,140534.0,109706.0,28.10055967768399
+33,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,2.0,171362.0,109706.0,56.20111935536798
+34,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,0.5,78878.0,109706.0,-28.10055967768399
+35,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,0.75,94292.0,109706.0,-14.050279838841995
+36,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.0,109706.0,109706.0,0.0
+37,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.25,125119.99999999999,109706.0,14.050279838841973
+38,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.5,140534.0,109706.0,28.10055967768399
+39,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,2.0,171362.0,109706.0,56.20111935536798
+40,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,0.5,109016.0,109706.0,-0.6289537491112607
+41,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,1.0,109706.0,109706.0,0.0
+42,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,1.5,110396.0,109706.0,0.6289537491112718
+43,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,2.0,111086.0,109706.0,1.2579074982225213
+44,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.5,174224.59999999998,109706.0,58.81045703972434
+45,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.65,134520.84615384616,109706.0,22.619406553740127
+46,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.8,109706.0,109706.0,0.0
+47,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.95,92727.42105263157,109706.0,-15.476436063085364
+48,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,0.45,50563.95,109706.0,-53.909585619747325
+49,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,0.7,77446.69999999998,109706.0,-29.40522851986219
+50,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,1.0,109706.0,109706.0,0.0
+51,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,0.0,109256.0,109706.0,-0.4101872276812579
+52,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,45.0,109481.0,109706.0,-0.2050936138406234
+53,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,90.0,109706.0,109706.0,0.0
+54,2,Medium development,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,180.0,110156.0,109706.0,0.4101872276812468
+55,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,0.5,1664507.7647058826,2858250.823529412,-41.76481115640779
+56,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,0.75,2261379.2941176468,2858250.823529412,-20.88240557820391
+57,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.0,2858250.823529412,2858250.823529412,0.0
+58,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.25,3455122.3529411764,2858250.823529412,20.882405578203887
+59,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,1.5,4051993.8823529407,2858250.823529412,41.76481115640775
+60,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,GPU hours,2.0,5245736.941176471,2858250.823529412,83.5296223128156
+61,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,0.5,1664507.7647058826,2858250.823529412,-41.76481115640779
+62,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,0.75,2261379.294117647,2858250.823529412,-20.8824055782039
+63,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.0,2858250.823529412,2858250.823529412,0.0
+64,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.25,3455122.3529411764,2858250.823529412,20.882405578203887
+65,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,1.5,4051993.882352941,2858250.823529412,41.764811156407774
+66,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Number of experiments,2.0,5245736.941176471,2858250.823529412,83.5296223128156
+67,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,0.5,2844450.823529412,2858250.823529412,-0.48281277088759733
+68,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,1.0,2858250.823529412,2858250.823529412,0.0
+69,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,1.5,2872050.823529412,2858250.823529412,0.48281277088759733
+70,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Storage volume,2.0,2885850.823529412,2858250.823529412,0.9656255417751947
+71,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.5,4831726.4,2858250.823529412,69.0448703880267
+72,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.65,3725712.6153846155,2858250.823529412,30.349393577154583
+73,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.8,3034454.0,2858250.823529412,6.164720570359528
+74,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Utilization,0.95,2561487.5789473685,2858250.823529412,-10.382687276394996
+75,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,0.45,1307662.8705882356,2858250.823529412,-54.249541019163836
+76,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,0.7,2012475.5764705883,2858250.823529412,-29.59065873772574
+77,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Pricing factor,1.0,2858250.823529412,2858250.823529412,0.0
+78,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,0.0,2853750.823529412,2858250.823529412,-0.1574389470285653
+79,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,45.0,2856000.823529412,2858250.823529412,-0.0787194735142771
+80,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,90.0,2858250.823529412,2858250.823529412,0.0
+81,3,Large AV training,Microsoft Azure,Standard_NC24ads_A100_v4,Data egress price,180.0,2862750.823529412,2858250.823529412,0.1574389470285542

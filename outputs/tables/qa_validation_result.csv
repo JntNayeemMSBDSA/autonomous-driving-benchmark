@@ -1,0 +1,21 @@
+validation_id,check_name,table_name,severity,status,expected,actual,details,run_date
+1,Historical cutoff validation,dim_source,Critical,PASS,All publication dates <= 2025-06-30,35/35 valid,Sources dated exactly at cutoff are allowed,2026-07-21
+2,Source ID uniqueness,dim_source,Critical,PASS,35 unique source IDs,35,No duplicate source keys,2026-07-21
+3,Source URL completeness,dim_source,High,PASS,0 missing URLs,0,All source rows contain an acquisition URL,2026-07-21
+4,Company key uniqueness,dim_company,Critical,PASS,4 unique companies,4,All four roles represented,2026-07-21
+5,Company standardization,dim_company,High,PASS,"Tesla, Waymo, NVIDIA, Mobileye","['Mobileye', 'NVIDIA', 'Tesla', 'Waymo']",Canonical names enforced,2026-07-21
+6,Incident duplicate detection,fact_av_incident,High,PASS,0 duplicate report IDs,0,Latest report version would be retained,2026-07-21
+7,Incident date validation,fact_av_incident,High,PASS,All incident months parse,3,Month-year values standardized,2026-07-21
+8,Incident cutoff validation,fact_av_incident,Critical,PASS,All dates <= cutoff,2025-06-01,Excerpt ends before cutoff,2026-07-21
+9,US state validation,fact_av_incident,Medium,PASS,All state codes valid,"['AZ', 'CA', 'TX']",Standard two-letter codes,2026-07-21
+10,Mileage reasonableness,fact_av_incident,Medium,PASS,"0 to 1,000,000",45257 to 164698,Broad validation range,2026-07-21
+11,Deployment nonnegative,fact_deployment_mileage,Critical,PASS,All values >= 0,1500.0,No negative deployment counts,2026-07-21
+12,Deployment cutoff,fact_deployment_mileage,Critical,PASS,All dates <= cutoff,2025-05-05,Point-in-time metrics frozen,2026-07-21
+13,GPU pricing nonnegative,fact_gpu_pricing,Critical,PASS,All hourly rates > 0,3.67,USD hourly prices,2026-07-21
+14,Scenario utilization range,gpu_scenarios,Critical,PASS,0 < utilization <= 1,"[0.7, 0.8, 0.85]",No invalid rate,2026-07-21
+15,Scenario cost reconciliation,fact_training_cost_scenario,Critical,PASS,Total equals component sum,0.0,Floating-point tolerance used,2026-07-21
+16,Scalability weight totals,scalability_criteria,Critical,PASS,Each scheme sums to 100,"{'baseline_weight': 100, 'l4_operator_weight': 100, 'platform_supplier_weight': 100}",Weights independently validated,2026-07-21
+17,Scalability score range,fact_scalability_score,Critical,PASS,All scores 1 to 5,2 to 5,Ordinal score constraint,2026-07-21
+18,Score referential integrity,fact_scalability_score,Critical,PASS,All company and criterion keys resolve,All resolved,Foreign-key validation,2026-07-21
+19,Capability source integrity,fact_company_capability,Critical,PASS,All source IDs resolve,20,Every capability has evidence,2026-07-21
+20,Record-count reconciliation,NHTSA excerpt,High,PASS,Raw = staging = clean for no-duplicate excerpt,3 = 3 = 3,No silent row removal,2026-07-21

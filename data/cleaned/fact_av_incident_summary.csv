@@ -1,0 +1,8 @@
+safety_indicator_id,company_id,as_of_date,indicator_name,unit,value,lower_confidence_bound,exposure_basis,source_id,status,limitation
+1,2,2025-01-31,Rider-only miles analyzed,mile,56700000.0,,Waymo ODD matched benchmark,SRC009,Verified,Exposure denominator available for Waymo only
+2,2,2025-01-31,Any-injury vehicle-to-vehicle intersection crash rate reduction,percent,96.0,87.0,Matched human benchmark; lower CI,SRC009,Verified,Company-authored research and selected ODDs
+3,2,2025-01-31,Airbag-deployment crash rate reduction,percent,91.0,76.0,Matched human benchmark; lower CI,SRC009,Verified,Not a cross-company rate
+4,1,2025-06-15,NHTSA Level 2 incident records,record,,,NHTSA SGO archive,SRC003,Available but not redistributed,Raw totals cannot be normalized because FSD/Autopilot exposure denominator is unavailable
+5,2,2025-06-15,NHTSA ADS incident records,record,,,NHTSA SGO archive,SRC002,Available but not redistributed,Reporting threshold and report versions differ from Level 2
+6,3,2025-06-30,Direct operator safety exposure,not applicable,,,Platform provider,SRC018,Not comparable,NVIDIA does not operate a single comparable public fleet
+7,4,2025-06-30,Direct operator safety exposure,not applicable,,,OEM supplier,SRC023,Not comparable,Mobileye technology spans many OEMs and automation levels

@@ -1,0 +1,70 @@
+table fact_cost_sensitivity
+
+	column sensitivity_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: sensitivity_id
+
+	column scenario_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: scenario_id
+
+	column scenario_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: scenario_name
+
+	column cloud_provider
+		dataType: string
+		summarizeBy: none
+		sourceColumn: cloud_provider
+
+	column instance_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: instance_type
+
+	column variable
+		dataType: string
+		summarizeBy: none
+		sourceColumn: variable
+
+	column parameter_value
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: parameter_value
+
+	column total_cost_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: total_cost_usd
+
+	column baseline_total_cost_usd
+		dataType: double
+		formatString: $#,0.00
+		summarizeBy: sum
+		sourceColumn: baseline_total_cost_usd
+
+	column change_from_baseline_pct
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: change_from_baseline_pct
+
+	partition fact_cost_sensitivity = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\janna\Desktop\New folder\Projects\autonomous_driving_benchmark\autonomous_driving_benchmark\powerbi\powerbi_ready_data.xlsx"), null, true),
+				    Data = Source{[Item="CostSensitivity",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Data,{{"sensitivity_id", Int64.Type}, {"scenario_id", Int64.Type}, {"scenario_name", type text}, {"cloud_provider", type text}, {"instance_type", type text}, {"variable", type text}, {"parameter_value", type number}, {"total_cost_usd", type number}, {"baseline_total_cost_usd", type number}, {"change_from_baseline_pct", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
