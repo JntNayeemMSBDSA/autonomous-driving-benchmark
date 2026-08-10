@@ -9,7 +9,6 @@ A source-traceable analytics project comparing **Tesla, Waymo, NVIDIA, and Mobil
 
 ![Executive Benchmark dashboard](powerbi/Executive_Benchmark.png)
 
----
 
 ## Project origin
 
@@ -39,7 +38,6 @@ After the internship, I independently reconstructed and substantially expanded t
 
 > **Professional disclosure:** I was not employed by Microsoft. This repository is an independent public reconstruction and extension of an earlier Microsoft client-based internship project. It uses public information and does not contain Microsoft-internal data, confidential company information, or the exact historical client deliverables.
 
----
 
 ## What I did
 
@@ -62,7 +60,6 @@ I completed the public reconstruction as an end-to-end analytics project, from r
 | Quality assurance | Created tests for keys, dates, sources, costs, weights, ranges, and referential integrity | 20/20 supplied validation checks passed |
 | Business communication | Produced an executive summary, analytical report, dashboard export, methodology, and limitation register | A complete package for technical and nontechnical audiences |
 
----
 
 ## Business problem
 
@@ -95,7 +92,6 @@ The analysis investigates:
 12. What technical, operational, regulatory, commercial, and cost constraints affect each company?
 13. Which conclusions are verified, inferred, scenario-based, or unsupported by public evidence?
 
----
 
 ## Analytical approach
 
@@ -110,7 +106,6 @@ The project uses a role-aware comparative case-study and benchmarking design. Th
 
 No cross-company metric is combined unless the unit, exposure basis, reporting threshold, geography, period, and interpretation are reasonably aligned.
 
----
 
 ## End-to-end architecture
 
@@ -146,9 +141,7 @@ Public regulatory, financial, technical, and company sources
                               |
                               v
                     Automated QA validation
-```
 
----
 
 ## Data engineering
 
@@ -182,7 +175,6 @@ The reporting layer creates datasets for Power BI, safety analysis, deployment a
 
 No record is silently removed. Exclusions, unavailable files, deduplication rules, and transformation effects are documented.
 
----
 
 ## Python work
 
@@ -204,7 +196,6 @@ The [`python`](python) directory contains the reusable pipeline:
 
 All project paths are relative to the repository root.
 
----
 
 ## SQL work
 
@@ -246,7 +237,6 @@ The delivered [`autonomous_driving.db`](sql/autonomous_driving.db) database is p
 
 The Power BI model does not fabricate a separate disengagement table where no distinct delivered workbook sheet supports one.
 
----
 
 ## Analytical notebooks
 
@@ -259,7 +249,6 @@ The [`notebooks`](notebooks) directory contains four executed notebooks:
 
 The notebooks use project-relative paths and retain their executed outputs for review.
 
----
 
 ## Safety and deployment methodology
 
@@ -279,8 +268,6 @@ Waymo's 56.7 million rider-only-mile study is treated as exposure-aligned eviden
 Tesla safety publications are not merged with Waymo's matched analysis because the crash definitions, operating environments, exposure measures, road mix, and benchmark construction differ. NVIDIA and Mobileye are evaluated primarily as platform and component suppliers rather than homogeneous fleet operators.
 
 Deployment indicators retain their original units and periods. Miles, rider-only miles, trips, vehicles, systems shipped, installed vehicles, deliveries, service areas, and California program mileage remain separate.
-
----
 
 ## GPU and cloud-cost model
 
@@ -323,7 +310,6 @@ total = training compute + simulation compute + storage + egress
 
 The sensitivity analysis varies GPU hours, experiment count, storage volume, utilization, price factor, and egress price. Compute requirements, experiment volume, utilization, and pricing treatment produce the largest modeled changes.
 
----
 
 ## Scalability framework
 
@@ -359,7 +345,6 @@ sum(criterion weight)
 
 The scores are ordinal and weighting-dependent. They expose strategic tradeoffs rather than selecting a universal winner or creating a safety ranking.
 
----
 
 ## Power BI solution
 
@@ -402,7 +387,6 @@ The model avoids ambiguous bidirectional relationship paths and keeps cost-scena
 
 The report contains 64 visuals. All pages were opened and checked in Power BI Desktop. The report was refreshed, saved as PBIX, exported to PDF, and visually validated at normal viewing size.
 
----
 
 ## Key findings
 
@@ -438,7 +422,6 @@ GPU hours, required GPU count, experiment volume, utilization, and pricing treat
 
 The analysis identifies different scalability patterns across consumer fleet distribution, geofenced Level 4 operations, horizontal compute and simulation platforms, and OEM technology integration. The framework is therefore a decision aid rather than a winner-selection model.
 
----
 
 ## Evidence governance
 
@@ -461,7 +444,6 @@ The complete registers are available in:
 | Scenario | Output produced from explicit analytical assumptions |
 | Unsupported | Public evidence cannot answer the question responsibly |
 
----
 
 ## Data quality and validation
 
@@ -479,7 +461,6 @@ The automated quality layer checks duplicate keys, missing values, data types, d
 
 The full results are available in [`outputs/quality_report.xlsx`](outputs/quality_report.xlsx).
 
----
 
 ## Repository structure
 
@@ -537,7 +518,6 @@ autonomous-driving-benchmark/
 | Quality report | [`quality_report.xlsx`](outputs/quality_report.xlsx) |
 | Reproducibility guide | [`reproducibility_guide.md`](documentation/reproducibility_guide.md) |
 
----
 
 ## Reproducing the project
 
@@ -588,7 +568,6 @@ Then run:
 
 Execute notebooks from the project root so relative paths resolve correctly.
 
----
 
 ## Known limitations
 
@@ -620,7 +599,6 @@ Additional limitations include:
 
 The complete limitation register is available in [`documentation/known_limitations.md`](documentation/known_limitations.md) and [`assumptions_and_limitations.xlsx`](assumptions_and_limitations.xlsx).
 
----
 
 ## Responsible interpretation
 
@@ -638,7 +616,6 @@ This project intentionally does not:
 
 The goal is not to simplify away the differences among the companies. It is to make those differences understandable, measurable where possible, and explicit where direct comparison is not defensible.
 
----
 
 ## Skills demonstrated
 
@@ -658,7 +635,6 @@ The goal is not to simplify away the differences among the companies. It is to m
 - Executive communication
 - Responsible analytical interpretation
 
----
 
 ## Author
 
@@ -668,7 +644,6 @@ Data analytics and business intelligence professional focused on building clear,
 
 GitHub: [JntNayeemMSBDSA](https://github.com/JntNayeemMSBDSA)
 
----
 
 ## Final note
 
