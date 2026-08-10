@@ -141,6 +141,7 @@ Public regulatory, financial, technical, and company sources
                               |
                               v
                     Automated QA validation
+```
 
 
 ## Data engineering
@@ -495,8 +496,6 @@ autonomous-driving-benchmark/
 ```
 
 [`MANIFEST.csv`](MANIFEST.csv) records the repository contents, file sizes, hashes, and artifact descriptions.
-
----
 
 ## Main deliverables
 
