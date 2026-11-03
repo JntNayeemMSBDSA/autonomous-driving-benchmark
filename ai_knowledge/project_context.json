@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "knowledge_base_created": "2026-11-03",
+  "project": "Autonomous Driving Technology, Cloud Computing & Scalability Benchmark",
+  "repository": "https://github.com/JntNayeemMSBDSA/autonomous-driving-benchmark",
+  "base_revision": "92ca645fe5741c10b3656fe52930369f264ee8f8",
+  "source_cutoff": "2025-06-30",
+  "provenance": {
+    "status": "independent public reconstruction and substantial extension",
+    "original": "earlier Microsoft client-based global internship facilitated via MSU Russell Palmer Career Management Center",
+    "microsoft_employee": false,
+    "confidential_microsoft_data": false,
+    "exact_historical_deliverable": false
+  },
+  "entities": [
+    {
+      "company": "Tesla",
+      "role": "supervised Level 2 consumer ADAS developer"
+    },
+    {
+      "company": "Waymo",
+      "role": "geofenced Level 4 mobility operator"
+    },
+    {
+      "company": "NVIDIA",
+      "role": "compute/software/simulation platform supplier"
+    },
+    {
+      "company": "Mobileye",
+      "role": "OEM ADAS/autonomy technology supplier"
+    }
+  ],
+  "data_layers": [
+    "raw",
+    "manually_compiled",
+    "staging",
+    "cleaned",
+    "reporting",
+    "data_quality"
+  ],
+  "canonical_tools": [
+    "Python",
+    "pandas",
+    "SQLite",
+    "SQL",
+    "Jupyter",
+    "Power BI",
+    "DAX",
+    "Power Query"
+  ],
+  "database": {
+    "backend": "SQLite",
+    "physical_table_count": 15,
+    "dimensions": 5,
+    "facts": 8,
+    "bridges": 1,
+    "qa_tables": 1,
+    "ddl": "sql/01_create_schema.sql"
+  },
+  "power_bi": {
+    "model_tables": 18,
+    "relationships": 20,
+    "explicit_dax_measures": 53,
+    "authored_visuals": 64,
+    "visible_report_pages": 4,
+    "hidden_pages": 1,
+    "qa": "powerbi/Autonomous_Driving_Benchmark_QA.md",
+    "source_path_portable": false
+  },
+  "quantities": {
+    "sources": 35,
+    "primary_sources": 33,
+    "bundled_ads_example_rows": 3,
+    "gpu_workloads": 3,
+    "gpu_price_configurations": 6,
+    "pricing_treatments": 3,
+    "cost_scenarios": 54,
+    "scalability_criteria": 12,
+    "score_rows": 48,
+    "weight_schemes": 3,
+    "qa_artifact_pass": 20,
+    "qa_artifact_total": 20,
+    "runtime_validator_checks": 7
+  },
+  "files": {
+    "start": "AGENTS.md",
+    "route": "ai_knowledge/README.md",
+    "story": "ai_knowledge/01_PROJECT_STORY.md",
+    "architecture": "ai_knowledge/02_PIPELINE_AND_DATA_MODEL.md",
+    "code": "ai_knowledge/03_CODE_AND_DESIGN_DECISIONS.md",
+    "metrics": "ai_knowledge/04_METRICS_PROVENANCE.md",
+    "powerbi": "ai_knowledge/05_POWER_BI_AND_OPERATIONS.md",
+    "interviews": "ai_knowledge/06_INTERVIEW_QA.md",
+    "source_register": "data/manually_compiled/source_log.csv",
+    "findings": "data/reporting/findings_summary.csv",
+    "sql_ddl": "sql/01_create_schema.sql",
+    "pipeline": "python/run_pipeline.py"
+  },
+  "non_claims": [
+    "actual Microsoft employment",
+    "Microsoft-internal data",
+    "9.6 TB operational ingestion",
+    "S3 Snowflake EKS deployment",
+    "2.2x measured throughput",
+    "28% measured cost-per-epoch reduction",
+    "35% measured latency reduction",
+    "enterprise RLS/scheduled refresh",
+    "actual company GPU spend",
+    "representative crash incident rates"
+  ],
+  "answer_policy": [
+    "verify against source files",
+    "include periods and units",
+    "do not infer rates without matched denominator",
+    "separate hypothetical from implemented",
+    "cite file paths and source IDs",
+    "state doc conflicts"
+  ]
+}
